@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Equal_Hash/Equal_Hash.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:runtime_demo/runtime_demo.xcodeproj">
    </FileRef>
    <FileRef
