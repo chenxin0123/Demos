@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		9063E4E51CE84FDF00522CBE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9063E4E41CE84FDF00522CBE /* main.m */; };
 		9063E4E81CE84FDF00522CBE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9063E4E71CE84FDF00522CBE /* AppDelegate.m */; };
-		9063E4EB1CE84FDF00522CBE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9063E4EA1CE84FDF00522CBE /* ViewController.m */; };
 		9063E4EE1CE84FDF00522CBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9063E4EC1CE84FDF00522CBE /* Main.storyboard */; };
 		9063E4F01CE84FDF00522CBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9063E4EF1CE84FDF00522CBE /* Assets.xcassets */; };
 		9063E4F31CE84FDF00522CBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9063E4F11CE84FDF00522CBE /* LaunchScreen.storyboard */; };
+		9063E4FC1CE8514700522CBE /* CXTopTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9063E4FB1CE8514700522CBE /* CXTopTabBarController.m */; };
+		9081A2481CE86C1300ACA6D5 /* CXTabBarControllerTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9081A2471CE86C1300ACA6D5 /* CXTabBarControllerTransitioningDelegate.m */; };
+		9081A24B1CE8721C00ACA6D5 /* CXInteractiveTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9081A24A1CE8721C00ACA6D5 /* CXInteractiveTransitionController.m */; };
+		9081A24E1CE8770800ACA6D5 /* CXSlideAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9081A24D1CE8770800ACA6D5 /* CXSlideAnimationController.m */; };
+		9081A2511CE9560100ACA6D5 /* CXTransitionContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9081A2501CE9560100ACA6D5 /* CXTransitionContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +24,21 @@
 		9063E4E41CE84FDF00522CBE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9063E4E61CE84FDF00522CBE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9063E4E71CE84FDF00522CBE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9063E4E91CE84FDF00522CBE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9063E4EA1CE84FDF00522CBE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9063E4ED1CE84FDF00522CBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9063E4EF1CE84FDF00522CBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9063E4F21CE84FDF00522CBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9063E4F41CE84FDF00522CBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9063E4FA1CE8514700522CBE /* CXTopTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXTopTabBarController.h; sourceTree = "<group>"; };
+		9063E4FB1CE8514700522CBE /* CXTopTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXTopTabBarController.m; sourceTree = "<group>"; };
+		9063E4FD1CE857A800522CBE /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		9081A2461CE86C1300ACA6D5 /* CXTabBarControllerTransitioningDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CXTabBarControllerTransitioningDelegate.h; path = ../CXTabBarControllerTransitioningDelegate.h; sourceTree = "<group>"; };
+		9081A2471CE86C1300ACA6D5 /* CXTabBarControllerTransitioningDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CXTabBarControllerTransitioningDelegate.m; path = ../CXTabBarControllerTransitioningDelegate.m; sourceTree = "<group>"; };
+		9081A2491CE8721C00ACA6D5 /* CXInteractiveTransitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXInteractiveTransitionController.h; sourceTree = "<group>"; };
+		9081A24A1CE8721C00ACA6D5 /* CXInteractiveTransitionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXInteractiveTransitionController.m; sourceTree = "<group>"; };
+		9081A24C1CE8770800ACA6D5 /* CXSlideAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSlideAnimationController.h; sourceTree = "<group>"; };
+		9081A24D1CE8770800ACA6D5 /* CXSlideAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXSlideAnimationController.m; sourceTree = "<group>"; };
+		9081A24F1CE9560100ACA6D5 /* CXTransitionContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXTransitionContext.h; sourceTree = "<group>"; };
+		9081A2501CE9560100ACA6D5 /* CXTransitionContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXTransitionContext.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,13 +73,22 @@
 			children = (
 				9063E4E61CE84FDF00522CBE /* AppDelegate.h */,
 				9063E4E71CE84FDF00522CBE /* AppDelegate.m */,
-				9063E4E91CE84FDF00522CBE /* ViewController.h */,
-				9063E4EA1CE84FDF00522CBE /* ViewController.m */,
 				9063E4EC1CE84FDF00522CBE /* Main.storyboard */,
 				9063E4EF1CE84FDF00522CBE /* Assets.xcassets */,
 				9063E4F11CE84FDF00522CBE /* LaunchScreen.storyboard */,
 				9063E4F41CE84FDF00522CBE /* Info.plist */,
 				9063E4E31CE84FDF00522CBE /* Supporting Files */,
+				9063E4FA1CE8514700522CBE /* CXTopTabBarController.h */,
+				9063E4FB1CE8514700522CBE /* CXTopTabBarController.m */,
+				9081A2461CE86C1300ACA6D5 /* CXTabBarControllerTransitioningDelegate.h */,
+				9081A2471CE86C1300ACA6D5 /* CXTabBarControllerTransitioningDelegate.m */,
+				9063E4FD1CE857A800522CBE /* Define.h */,
+				9081A2491CE8721C00ACA6D5 /* CXInteractiveTransitionController.h */,
+				9081A24A1CE8721C00ACA6D5 /* CXInteractiveTransitionController.m */,
+				9081A24C1CE8770800ACA6D5 /* CXSlideAnimationController.h */,
+				9081A24D1CE8770800ACA6D5 /* CXSlideAnimationController.m */,
+				9081A24F1CE9560100ACA6D5 /* CXTransitionContext.h */,
+				9081A2501CE9560100ACA6D5 /* CXTransitionContext.m */,
 			);
 			path = transition;
 			sourceTree = "<group>";
@@ -149,9 +171,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9063E4EB1CE84FDF00522CBE /* ViewController.m in Sources */,
+				9063E4FC1CE8514700522CBE /* CXTopTabBarController.m in Sources */,
+				9081A24E1CE8770800ACA6D5 /* CXSlideAnimationController.m in Sources */,
+				9081A2511CE9560100ACA6D5 /* CXTransitionContext.m in Sources */,
 				9063E4E81CE84FDF00522CBE /* AppDelegate.m in Sources */,
 				9063E4E51CE84FDF00522CBE /* main.m in Sources */,
+				9081A2481CE86C1300ACA6D5 /* CXTabBarControllerTransitioningDelegate.m in Sources */,
+				9081A24B1CE8721C00ACA6D5 /* CXInteractiveTransitionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +326,7 @@
 				9063E4F91CE84FDF00522CBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

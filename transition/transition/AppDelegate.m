@@ -7,16 +7,22 @@
 //
 
 #import "AppDelegate.h"
-
-@interface AppDelegate ()
-
+#import "CXTopTabBarController.h"
+#import "CXTabBarControllerTransitioningDelegate.h"
+#import "CXInteractiveTransitionController.h"
+#import "Define.h"
+#import "CXSlideAnimationController.h"
+@interface AppDelegate () <CXTabBarControllerTransitioningDelegate>
 @end
 
 @implementation AppDelegate
-
+@synthesize interactionController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [self configureRootViewController];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -41,5 +47,49 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark - init
+- (UIViewController *)configureRootViewController {
+    
+    UIViewController *subVC1 = [UIViewController new];
+    subVC1.view.backgroundColor = [UIColor colorWithRed:0.4 green:0.8 blue:1 alpha:1];
+    subVC1.title = @"first";
+    
+    UIViewController *subVC2 = [UIViewController new];
+    subVC2.view.backgroundColor = [UIColor colorWithRed:0.1 green:0.4 blue:0.8 alpha:1];
+    subVC2.title = @"second";
+    
+    UIViewController *subVC3 = [UIViewController new];
+    subVC3.view.backgroundColor = [UIColor colorWithRed:0.3 green:0.8 blue:0.4 alpha:1];
+    subVC3.title = @"third";
+    
+    UIViewController *subVC4 = [UIViewController new];
+    subVC4.view.backgroundColor = [UIColor colorWithRed:0.5 green:0.4 blue:0.5 alpha:1];
+    subVC4.title = @"fourth";
+    
+    CXTopTabBarController *container = [CXTopTabBarController tabBarControllerWithViewControllers:@[subVC1,subVC2,subVC3,subVC4]];
+    container.cx_transitionDelegate = self;
+    
+    return container;
+}
+
+
+#pragma mark - CXTabBarControllerTransitioningDelegate 转场代理
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForController:(CXTopTabBarController *)controller transitionFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+    NSInteger fromIndex = [controller.viewControllers indexOfObject:fromVC];
+    NSInteger toIndex = [controller.viewControllers indexOfObject:toVC];
+    CXTransitionType transitionType = fromIndex<toIndex?CXTabOperationDirectionRight:CXTabOperationDirectionLeft;
+    CXSlideAnimationController *animationController = [CXSlideAnimationController animationControllerWithTransitionType:transitionType];
+    return animationController;
+}
+
+- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForController:(CXTopTabBarController *)controller animationController:(id<UIViewControllerAnimatedTransitioning>)animator {
+    if (!self.interactionController) {
+        self.interactionController = [CXInteractiveTransitionController new];
+    }
+    return self.interactionController;
+}
+
 
 @end
