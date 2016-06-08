@@ -42,5 +42,9 @@
     return obj;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%@ %p hash_V:%@>",[self class],self,@(self.hash_V)];
+}
+
 
 @end
