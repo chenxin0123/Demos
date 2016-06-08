@@ -32,6 +32,7 @@
     IMP imp = method_getImplementation(mb);
     //改变实现 原实现被覆盖
     class_replaceMethod([self class], @selector(objcA), imp, method_getTypeEncoding(mb));
+    
 }
 
 @end

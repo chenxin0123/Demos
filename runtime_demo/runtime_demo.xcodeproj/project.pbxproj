@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		908DF5651D06BD3400043BB5 /* StaticTest.c in Sources */ = {isa = PBXBuildFile; fileRef = 908DF5631D06BD3400043BB5 /* StaticTest.c */; };
 		E04CBCB81CDF090D00972FE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E04CBCB71CDF090D00972FE6 /* main.m */; };
 		E04CBCBB1CDF090D00972FE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E04CBCBA1CDF090D00972FE6 /* AppDelegate.m */; };
 		E04CBCBE1CDF090D00972FE6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E04CBCBD1CDF090D00972FE6 /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		908DF5631D06BD3400043BB5 /* StaticTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = StaticTest.c; sourceTree = "<group>"; };
+		908DF5641D06BD3400043BB5 /* StaticTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticTest.h; sourceTree = "<group>"; };
 		E04CBCB31CDF090D00972FE6 /* runtime_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runtime_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04CBCB71CDF090D00972FE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E04CBCB91CDF090D00972FE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -88,6 +91,8 @@
 			children = (
 				E04CBCD11CDF0CBB00972FE6 /* ObjcA.h */,
 				E04CBCD21CDF0CBB00972FE6 /* ObjcA.m */,
+				908DF5631D06BD3400043BB5 /* StaticTest.c */,
+				908DF5641D06BD3400043BB5 /* StaticTest.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				908DF5651D06BD3400043BB5 /* StaticTest.c in Sources */,
 				E04CBCBE1CDF090D00972FE6 /* ViewController.m in Sources */,
 				E04CBCD31CDF0CBB00972FE6 /* ObjcA.m in Sources */,
 				E04CBCBB1CDF090D00972FE6 /* AppDelegate.m in Sources */,
@@ -316,6 +322,7 @@
 				E04CBCCC1CDF090D00972FE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
