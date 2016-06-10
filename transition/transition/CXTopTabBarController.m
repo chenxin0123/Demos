@@ -75,7 +75,7 @@
         [self.tabBarContainer addConstraint:[NSLayoutConstraint constraintWithItem:btn attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.tabBarContainer attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
         
     }
-    
+    self.view.frame = CGRectMake(0, 0, 150, 150);
 }
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -86,8 +86,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    swipe.direction = UISwipeGestureRecognizerDirectionLeft|UISwipeGestureRecognizerDirectionRight;
+//    [self.view addGestureRecognizer:swipe];
+    
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+//    [pan requireGestureRecognizerToFail:swipe];
     [self.view addGestureRecognizer:pan];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -231,7 +238,15 @@
 }
 #pragma mark - GestureRecognizer
 
+
+- (void)handleSwipe:(UISwipeGestureRecognizer *)gestures {
+    NSLog(@"%@:%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
+    if (gestures.direction == UISwipeGestureRecognizerDirectionLeft) {
+        NSLog(@"left");
+    }
+}
 - (void)handlePan:(UIPanGestureRecognizer *)gestures {
+    NSLog(@"%@:%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
     if (self.viewControllers.count<2 && !self.cx_transitionDelegate) {
         return;
     }
@@ -261,7 +276,9 @@
         case UIGestureRecognizerStateEnded:
         case UIGestureRecognizerStateCancelled: {
             self.interactive = NO;
-            if (progress > 0.4) {
+            NSLog(@"%@",@([gestures velocityInView:self.view].x));
+            static CGFloat x = 1000.0;
+            if (progress > 0.4||fabs([gestures velocityInView:self.view].x)>x) {
                 [self.cx_transitionDelegate.interactionController finishInteractiveTransition];
             } else {
                 [self.cx_transitionDelegate.interactionController cancelInteractiveTransition];
