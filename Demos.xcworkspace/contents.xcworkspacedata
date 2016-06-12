@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:KVO_demo/KVO_demo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:transition/transition.xcodeproj">
    </FileRef>
    <FileRef
