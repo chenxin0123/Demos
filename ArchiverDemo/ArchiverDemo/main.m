@@ -19,19 +19,24 @@ int main(int argc, const char * argv[]) {
 //    [list addObject:o1];
 //    [list addObject:o2];
     NSArray *list = @[o1,o2];
+    NSString *dir = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"a/b/c/d/e.cx"];
+    NSString *path = [dir stringByAppendingPathComponent:@"file"];
     
-    NSString *path = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"file"];
+    NSError *error;
     
-    if ([NSKeyedArchiver archiveRootObject:nil toFile:path]) {
-        NSLog(@"success");
+    [[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:&error];
+    if (error) {
+        NSLog(@"error:%@",error);
     }
-    
+    if ([NSKeyedArchiver archiveRootObject:list toFile:path]) {
+        NSLog(@"success");
+    }else {
+        NSLog(@"fail");
+    }
     
     id x = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
     
     NSLog(@"%@ %@",list,x);
-    
-
     
     return 0;
 }
