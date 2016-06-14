@@ -19,15 +19,26 @@ int main(int argc, const char * argv[]) {
 //    [list addObject:o1];
 //    [list addObject:o2];
     NSArray *list = @[o1,o2];
+    
+    
     NSString *dir = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"a/b/c/d/e.cx"];
+    
     NSString *path = [dir stringByAppendingPathComponent:@"file"];
     
     NSError *error;
+    if (![[NSFileManager defaultManager] fileExistsAtPath:dir]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:&error];
+    }else {
+        NSLog(@"dir exist");
+    }
     
-    [[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:&error];
     if (error) {
         NSLog(@"error:%@",error);
     }
+    
+    NSLog(@"%@",[[NSFileManager defaultManager] attributesOfItemAtPath:path error:&error]);
+    
+    
     if ([NSKeyedArchiver archiveRootObject:list toFile:path]) {
         NSLog(@"success");
     }else {
