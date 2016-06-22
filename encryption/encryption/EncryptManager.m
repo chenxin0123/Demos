@@ -11,65 +11,14 @@
 #import <CommonCrypto/CommonCryptor.h>
 #import <Security/Security.h>
 
-//密匙 key
-#define gkey            @"akfjdkidfssejkddfsdfodjd"
+#define gkey            @"akfjdkidfssejkddfsdfodjdakfjdkidfssejkddfsdfodjd"
 
-static const char *const iv = "afsdfsdf";
+#define giv  @"afsdfsdfafsdfsdf"
 
 @implementation EncryptManager
 
-+ (NSString *)doEncrypt:plainText{
-    
-    //把string 转NSData
-    NSData* data = [plainText dataUsingEncoding:NSUTF8StringEncoding];
-    
-    //length
-    size_t plainTextBufferSize = [data length];
-    
-    const void *vplainText = (const void *)[data bytes];
-    
-    CCCryptorStatus ccStatus;
-    void *bufferPtr = NULL;
-    size_t bufferPtrSize = 0;
-    size_t movedBytes = 0;
-    
-    bufferPtrSize = (plainTextBufferSize + kCCBlockSize3DES) & ~(kCCBlockSize3DES - 1);
-    bufferPtr = malloc( bufferPtrSize * sizeof(char *));
-    memset((void *)bufferPtr, 0x0, bufferPtrSize);
-    
-    const void *vkey = (const void *) [gkey UTF8String];
-    //偏移量
-    
-    
-    //配置CCCrypt
-    ccStatus = CCCrypt(kCCEncrypt,
-                       kCCAlgorithm3DES, //3DES
-                       kCCOptionPKCS7Padding, //设置模式
-                       vkey,    //key
-                       kCCKeySize3DES,
-                       iv,     //偏移量，这里不用，设置为nil;不用的话，必须为nil,不可以为@“”
-                       vplainText,
-                       plainTextBufferSize,
-                       (void *)bufferPtr,
-                       bufferPtrSize,
-                       &movedBytes);
-    
-    if (ccStatus != kCCSuccess) {
-        NSLog(@"fail");
-    }
-    
-    char *              chars = (char *)bufferPtr;
-    NSMutableString *   hexString = [[NSMutableString alloc] init];
-    for(NSUInteger i = 0; i < movedBytes; i++ ) {
-        [hexString appendString:[NSString stringWithFormat:@"%0.2hhx", chars[i]]];
-    }
-    
-    free(bufferPtr);
-    return hexString.copy;
-}
 
-+ (NSString*)doDecEncrypt:(NSString *)hexString{
-    //十六进制转NSData
+NSData *hexStringToData(NSString *hexString){
     long len = [hexString length] / 2;
     unsigned char *buf = malloc(len);
     unsigned char *whole_byte = buf;
@@ -83,7 +32,60 @@ static const char *const iv = "afsdfsdf";
         whole_byte++;
     }
     
-    NSData *encryptData = [NSData dataWithBytes:buf length:len];
+    return [NSData dataWithBytes:buf length:len];
+}
+
+NSString *dataToHexString(NSData *data) {
+    char *              chars = (char *)data.bytes;
+    NSMutableString *   hexString = [[NSMutableString alloc] init];
+    for(NSUInteger i = 0; i < data.length; i++ ) {
+        [hexString appendString:[NSString stringWithFormat:@"%0.2hhx", chars[i]]];
+    }
+    
+    return hexString;
+}
+
+
++ (NSString *)doEncrypt:plainText{
+    
+    //把string 转NSData
+    NSData* data = [plainText dataUsingEncoding:NSUTF8StringEncoding];
+    
+    size_t plainTextBufferSize = [data length];
+    const void *vplainText = (const void *)[data bytes];
+    
+    CCCryptorStatus ccStatus;
+    void *bufferPtr = NULL;
+    size_t bufferPtrSize = 0;
+    size_t movedBytes = 0;
+    
+    bufferPtrSize = (plainTextBufferSize + kCCBlockSize3DES) & ~(kCCBlockSize3DES - 1);
+    bufferPtr = malloc( bufferPtrSize * sizeof(char *));
+    memset((void *)bufferPtr, 0x0, bufferPtrSize);
+    
+    const void *vkey = (const void *) hexStringToData(gkey).bytes;
+    const void *iv = (const void *) hexStringToData(giv).bytes;
+    ccStatus = CCCrypt(kCCEncrypt,
+                       kCCAlgorithm3DES,
+                       kCCOptionPKCS7Padding,
+                       vkey,
+                       kCCKeySize3DES,
+                       iv,
+                       vplainText,
+                       plainTextBufferSize,
+                       (void *)bufferPtr,
+                       bufferPtrSize,
+                       &movedBytes);
+    
+    NSData *resultData = [NSData dataWithBytes:bufferPtr length:movedBytes];
+    
+    free(bufferPtr);
+    
+    return dataToHexString(resultData);
+}
+
++ (NSString*)doDecEncrypt:(NSString *)hexString{
+    NSData *encryptData = hexStringToData(hexString);
     
     size_t plainTextBufferSize = [encryptData length];
     const void *vplainText = [encryptData bytes];
@@ -97,7 +99,8 @@ static const char *const iv = "afsdfsdf";
     bufferPtr = malloc( bufferPtrSize * sizeof(uint8_t));
     memset((void *)bufferPtr, 0x0, bufferPtrSize);
     
-    const void *vkey = (const void *) [gkey UTF8String];
+    const void *vkey = (const void *) hexStringToData(gkey).bytes;
+    const void *iv = (const void *) hexStringToData(giv).bytes;
     
     ccStatus = CCCrypt(kCCDecrypt,
                        kCCAlgorithm3DES,
