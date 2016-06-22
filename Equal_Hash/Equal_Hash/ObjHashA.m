@@ -28,8 +28,8 @@
 - (NSUInteger)hash
 {
     
-//    NSUInteger hash = [super hash];
-    NSUInteger hash = self.hash_V;
+    NSUInteger hash = [super hash];
+//    NSUInteger hash = self.hash_V;
     NSLog(@"hash is %@",@(hash));
     
     return hash;
