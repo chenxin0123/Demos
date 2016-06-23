@@ -41,17 +41,34 @@ NSString *dataToHexString(NSData *data) {
     return hexString;
 }
 
+NSData *objectToData(id obj) {
+    NSData *data = nil;
+    if ([obj isKindOfClass:[NSString class]]) {
+        data = [obj dataUsingEncoding:NSUTF8StringEncoding];
+    } else if ([obj isKindOfClass:[NSDictionary class]] || [obj isKindOfClass:[NSArray class]]) {
+        data = [NSJSONSerialization dataWithJSONObject:obj options:0 error:nil];
+    }
+    return data;
+}
+
 #pragma mark - 3DES
-+ (NSString*)doDecEncrypt:(NSString *)hexString{
-    NSData *data = [self tripleDesEncryptOrDecryptData:hexStringToData(hexString) encrypt:NO];
-    NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
++ (NSString *)tripleDESEncrypt:(id)encryptObj {
+    NSData *data = [self tripleDesEncryptOrDecryptData:objectToData(encryptObj) encrypt:YES];
+    return dataToHexString(data);
+}
+
++ (NSString*)tripleDESDecrypt:(id)decryptObj {
+    NSData *data = [self tripleDesEncryptOrDecryptData:hexStringToData(decryptObj) encrypt:NO];
+    
+    id result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments|NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:nil];
+    if (!result) {
+        result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    }
+    
     return result;
 }
 
-+ (NSString *)doEncrypt:plainText{
-    NSData *data = [self tripleDesEncryptOrDecryptData:[plainText dataUsingEncoding:NSUTF8StringEncoding] encrypt:YES];
-    return dataToHexString(data);
-}
 
 + (NSData *)tripleDesEncryptOrDecryptData:(NSData *)data encrypt:(BOOL)encrypt {
     const void *vkey = (const void *) hexStringToData(gkey).bytes;

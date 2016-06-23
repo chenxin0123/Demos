@@ -11,8 +11,7 @@
 
 @interface EncryptManager : NSObject
 
-+ (NSString *)doEncrypt:(NSString *)plainText;
-
-+ (NSString*)doDecEncrypt:(NSString *)encryptText;
++ (NSString *)tripleDESEncrypt:(id)encryptObj;
++ (NSString*)tripleDESDecrypt:(id)decryptObj;
 
 @end

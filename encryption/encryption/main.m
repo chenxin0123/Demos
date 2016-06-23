@@ -28,15 +28,13 @@ void base64Test_dic() {
 }
 
 void des3_test() {
-    NSString *origin = @"chenxinchenxinchenxinchenxinchenxin";
+//    id origin = @"chenxinchenxinchenxinchenxinchenxin";
+//    id origin = @{@"name":@"cx",@"gender":@(1)};
+    id origin = @[@"ddd",@"eee",@"aaa",@(33)];
     
-    NSString *res = [EncryptManager doEncrypt:origin];
-    //816c5b0c5e258fd2dec67c60b6bfb1ddc6bc9fa8a99005567f71f2c1678ced3b18194a4e97938f7a
-    //7c22b32ebeed0c1101f502a7deda07f934816d2e1895bbd4d14022f7fe292669e8c2692bd974e8a7
-    //88d8d943fdd0b37a5fcfdc0d3fd0bec61cb88cb4bcc910a04f0600a22e624d0270a2b00c13169cf6
-    //8ede545aa19dc198af7e7f6a2fe023b3fbbfe574f930055c16c9faeae1b33b2b0073fe8688834d4f
-    NSString *dec = [EncryptManager doDecEncrypt:res];
-    NSLog(@"\n\n\n明文：%@\n密文：%@\r\n解密：%@",origin,res,dec);
+    NSString *res = [EncryptManager tripleDESEncrypt:origin];
+    NSString *dec = [EncryptManager tripleDESDecrypt:res];
+    NSLog(@"\n\n\n明文[%@]：%@\n密文：%@\r\n解密[%@]：%@",[origin class],origin,res,[dec class],dec);
 }
 
 int main(int argc, char * argv[]) {
