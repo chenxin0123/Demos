@@ -12,6 +12,9 @@
 @interface EncryptManager : NSObject
 
 + (NSString *)tripleDESEncrypt:(id)encryptObj;
-+ (NSString*)tripleDESDecrypt:(id)decryptObj;
++ (id)tripleDESDecrypt:(NSString *)decryptObj;
 
+
++ (NSString *)rsaEncrypt:(id)encryptObj publicKey:(NSString *)key;
++ (id)rsaDecrypt:(NSString *)decryptObj privateKey:(NSString *)key;
 @end
