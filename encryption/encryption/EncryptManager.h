@@ -17,4 +17,11 @@
 
 + (NSString *)rsaEncrypt:(id)encryptObj publicKey:(NSString *)key;
 + (id)rsaDecrypt:(NSString *)decryptObj privateKey:(NSString *)key;
+
++ (NSData *)rsaDecryptData:(NSData *)data privateKey:(NSString *)key;
+
++ (NSData *)tripleDesEncryptOrDecryptData:(NSData *)data encrypt:(BOOL)encrypt;
+
+NSData *objectToData(id obj);
+id dataToObject(NSData *data);
 @end
