@@ -211,11 +211,7 @@ NSData *stripPrivateKeyHeader(NSData *d_key) {
     return [d_key subdataWithRange:NSMakeRange(idx, c_len)];
 }
 
-+ (NSString *)rsaEncrypt:(id)encryptObj publicKey:(NSString *)key {
-    if (!encryptObj || !key) {
-        return nil;
-    }
-    NSData *data = objectToData(encryptObj);
++ (NSData *)rsaEncryptData:(NSData *)data publicKey:(NSString *)key {
     SecKeyRef keyRef = createSeckeyWithKey(key,NO);
     if (!keyRef) {
         return nil;
@@ -251,12 +247,20 @@ NSData *stripPrivateKeyHeader(NSData *d_key) {
     free(outbuf);
     CFRelease(keyRef);
     
-    return dataToHexString(encryptedData);
+    return encryptedData;
 }
 
-+ (id)rsaDecrypt:(NSString *)decryptObj privateKey:(NSString *)key {
++ (NSString *)rsaEncrypt:(id)encryptObj publicKey:(NSString *)key {
+    if (!encryptObj || !key) {
+        return nil;
+    }
+    NSData *data = objectToData(encryptObj);
+    NSData *result = [self rsaEncryptData:data publicKey:key];
+    return dataToHexString(result);
+}
+
++ (NSData *)rsaDecryptData:(NSData *)data privateKey:(NSString *)key {
     
-    NSData *data = hexStringToData(decryptObj);
     SecKeyRef keyRef = createSeckeyWithKey(key,YES);
     
     const uint8_t *srcbuf = (const uint8_t *)[data bytes];
@@ -266,7 +270,7 @@ NSData *stripPrivateKeyHeader(NSData *d_key) {
     UInt8 *outbuf = malloc(block_size);
     size_t src_block_size = block_size;
     
-    NSMutableData *ret = [[NSMutableData alloc] init];
+    NSMutableData *decryptedData = [[NSMutableData alloc] init];
     OSStatus status = noErr;
     
     for(int idx=0; idx<srclen; idx+=src_block_size){
@@ -296,13 +300,20 @@ NSData *stripPrivateKeyHeader(NSData *d_key) {
                     }
                 }
             }
-            [ret appendBytes:&outbuf[idxFirstZero+1] length:idxNextZero-idxFirstZero-1];
+            [decryptedData appendBytes:&outbuf[idxFirstZero+1] length:idxNextZero-idxFirstZero-1];
         }
     }
     
     free(outbuf);
     CFRelease(keyRef);
-    return dataToObject(ret);
+    
+    return decryptedData;
+}
+
++ (id)rsaDecrypt:(NSString *)decryptObj privateKey:(NSString *)key {
+    NSData *data = hexStringToData(decryptObj);
+    NSData *result = [self rsaDecryptData:data privateKey:key];
+    return dataToObject(result);
 }
 
 @end
