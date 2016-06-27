@@ -12,7 +12,7 @@
 
 + (void)load {
     TestObj *app = [TestObj appearance];
-    app.count = 100;
+    app.count = 102;
     app.demoColor = [UIColor yellowColor];
 }
 
@@ -25,6 +25,20 @@
     return self;
 }
 
+
+#define switch__ true
+#if switch__
+
+- (void)setCount:(NSInteger)count {
+    _count = count;
+    self.layer.cornerRadius = _count%15;
+}
+
+- (void)setDemoColor:(UIColor *)demoColor {
+    _demoColor = demoColor;
+    self.backgroundColor = demoColor;
+}
+#else
 - (void)didMoveToSuperview {
     [self updateColor];
 }
@@ -33,5 +47,5 @@
     TestObj *app = [TestObj appearance];
     self.backgroundColor = app.demoColor?:self.demoColor;
 }
-
+#endif
 @end

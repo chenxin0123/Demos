@@ -17,16 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     TestObj *obj = [TestObj new];
-    obj.demoColor = [UIColor redColor];
-    obj.count = 88;
-    
-    TestObj *app = [TestObj appearance];
     
     [self.view addSubview:obj];
-    
-    NSLog(@"sin = %@, app = %@",@(obj.count),@(app.count));
 }
 
 - (void)didReceiveMemoryWarning {
