@@ -17,12 +17,12 @@ NSData *stripPrivateKeyHeader(NSData *d_key);
 
 @implementation EncryptManager
 
-NSString *dataToBase64String(NSData *data) {
+static NSString *dataToBase64String(NSData *data) {
     data = [data base64EncodedDataWithOptions:0];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
-NSData *base64StringToData(NSString *base64String) {
+static NSData *base64StringToData(NSString *base64String) {
     return [[NSData alloc] initWithBase64EncodedString:base64String options:NSDataBase64DecodingIgnoreUnknownCharacters];
 }
 
@@ -63,9 +63,9 @@ NSData *objectToData(id obj) {
 }
 
 id dataToObject(NSData *data) {
-    id result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments|NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:nil];
+    id result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     if (!result) {
-        result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        result =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments|NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:nil];
     }
 
     return result;
@@ -84,8 +84,13 @@ id dataToObject(NSData *data) {
 }
 
 + (NSData *)tripleDesEncryptOrDecryptData:(NSData *)data encrypt:(BOOL)encrypt {
-    const void *vkey = (const void *) hexStringToData(gkey).bytes;
-    const void *iv = (const void *) hexStringToData(giv).bytes;
+    
+    
+    NSString *s = @"0207799B3F7ACA8E5C3A34A7";
+    const void *vkey = [[NSData alloc] initWithBytes:s.UTF8String length:s.length].bytes;
+    
+    NSString *IV = @"0207799B";
+    const void *iv = [[NSData alloc] initWithBytes:IV.UTF8String length:IV.length].bytes;
     
     CCCryptorStatus ccStatus;
     size_t movedBytes = 0;
@@ -111,25 +116,32 @@ id dataToObject(NSData *data) {
 }
 
 #pragma mark - RSA
-SecKeyRef createSeckeyWithKey(NSString *key, BOOL isPrivate){
-    
-    
+
+SecKeyRef createSeckeyWithBase64Key(NSString *key, BOOL isPrivate){
+        
+    NSData *keyData = isPrivate? stripPrivateKeyHeader(base64StringToData(key)):stripPublicKeyHeader(base64StringToData(key));
+
+    return createSeckeyWithKeyData(keyData, isPrivate);
+}
+
+SecKeyRef createSeckeyWithKeyData(NSData *keyData, BOOL isPrivate) {
     NSMutableDictionary *keyQuery = [@{
-                                     (__bridge id)kSecClass:(__bridge id)kSecClassKey,
-                                     (__bridge id)kSecAttrKeyType:(__bridge id)kSecAttrKeyTypeRSA
-                                     } mutableCopy];
+                                       (__bridge id)kSecClass:(__bridge id)kSecClassKey,
+                                       (__bridge id)kSecAttrKeyType:(__bridge id)kSecAttrKeyTypeRSA
+                                       } mutableCopy];
     NSString *kTag = isPrivate?@"RSA_PRIVATE_KEY_TAG":@"RSA_PUBLIC_KEY_TAG";
     keyQuery[(__bridge id)kSecAttrApplicationTag] = [NSData dataWithBytes:[kTag UTF8String] length:[kTag length]];
     
     SecItemDelete((__bridge CFDictionaryRef)keyQuery);
     
-    keyQuery[(__bridge id)kSecValueData] = isPrivate? stripPrivateKeyHeader(base64StringToData(key)):stripPublicKeyHeader(base64StringToData(key));
+    keyQuery[(__bridge id)kSecValueData] = keyData;
     keyQuery[(__bridge id)kSecAttrKeyClass] = (__bridge id)(isPrivate?kSecAttrKeyClassPrivate:kSecAttrKeyClassPublic);
     keyQuery[(__bridge id)kSecAttrKeyType] = (__bridge id) kSecAttrKeyTypeRSA;
     keyQuery[(__bridge id)kSecReturnRef] = [NSNumber numberWithBool:YES];
+    [keyQuery setObject:[NSNumber numberWithBool:YES] forKey:(__bridge id)kSecReturnPersistentRef];
     
     OSStatus status = SecItemAdd((__bridge CFDictionaryRef)keyQuery, nil);
-    
+    [keyQuery removeObjectForKey:(__bridge id)kSecReturnPersistentRef];
     SecKeyRef keyRef = nil;
     status = SecItemCopyMatching((__bridge CFDictionaryRef)keyQuery, (CFTypeRef *)&keyRef);
     if(status != noErr){
@@ -212,7 +224,7 @@ NSData *stripPrivateKeyHeader(NSData *d_key) {
 }
 
 + (NSData *)rsaEncryptData:(NSData *)data publicKey:(NSString *)key {
-    SecKeyRef keyRef = createSeckeyWithKey(key,NO);
+    SecKeyRef keyRef = createSeckeyWithBase64Key(key,NO);
     if (!keyRef) {
         return nil;
     }
@@ -261,7 +273,10 @@ NSData *stripPrivateKeyHeader(NSData *d_key) {
 
 + (NSData *)rsaDecryptData:(NSData *)data privateKey:(NSString *)key {
     
-    SecKeyRef keyRef = createSeckeyWithKey(key,YES);
+    SecKeyRef keyRef = createSeckeyWithBase64Key(key,YES);
+    if (!keyRef) {
+        return nil;
+    }
     
     const uint8_t *srcbuf = (const uint8_t *)[data bytes];
     size_t srclen = (size_t)data.length;
