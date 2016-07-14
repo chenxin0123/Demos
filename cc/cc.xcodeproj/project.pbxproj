@@ -302,6 +302,7 @@
 				E060EBD11CCB228F00DE97FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
