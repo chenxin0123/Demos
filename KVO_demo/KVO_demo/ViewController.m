@@ -39,6 +39,7 @@ static NSArray *ClassMethodNames(Class c) {
     
 }
 
+static void *CXKVOContext = &CXKVOContext;
 
 - (void)test1 {
     CXKVOObject *obj = [CXKVOObject new];
@@ -46,9 +47,10 @@ static NSArray *ClassMethodNames(Class c) {
     
     ClassMethodNames([obj class]);
     ClassMethodNames(object_getClass(obj));
-    [obj addObserver:self forKeyPath:@"age" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
-    [obj addObserver:self forKeyPath:@"isBoy" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
-    [obj addObserver:self forKeyPath:@"boy" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
+    [obj addObserver:self forKeyPath:@"age" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:CXKVOContext];
+    [obj addObserver:self forKeyPath:@"_age" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:CXKVOContext];
+    [obj addObserver:self forKeyPath:@"isBoy" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:CXKVOContext];
+    [obj addObserver:self forKeyPath:@"boy" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:CXKVOContext];
     obj.age = 10;
     //_age不会触发 age会触发
     [obj setValue:@(11) forKey:@"_age"];
@@ -60,17 +62,23 @@ static NSArray *ClassMethodNames(Class c) {
     ClassMethodNames([obj class]);
     ClassMethodNames(object_getClass(obj));
     
+    
+    
+    /**
+     setValue:forKey 方法有效 但当key使用_key形式时 无法触发KVO
+     重写setter方法之后 只能手动KVO
+     手动KVO可以自定义key
+     KVO以属性名为key 与ivar名无关
+     */
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
-    if ([keyPath isEqualToString:@"age"]||[keyPath isEqualToString:@"isBoy"]||[keyPath isEqualToString:@"boy"]) {
+    if (context == CXKVOContext) {
         NSLog(@"%@:keyPath [old:%@ new:%@]",keyPath,change[NSKeyValueChangeOldKey],change[NSKeyValueChangeNewKey]);
     }else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
-
-
 
 
 @end

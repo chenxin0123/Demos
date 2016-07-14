@@ -19,15 +19,15 @@
     return YES;
 }
 - (void)setAge:(NSInteger)age {
-    [self willChangeValueForKey:@"age"];
+    [self willChangeValueForKey:@"_age"];
     _age = age;
-    [self didChangeValueForKey:@"age"];
+    [self didChangeValueForKey:@"_age"];
 }
 
 - (void)setBoy:(BOOL)boy {
-    [self willChangeValueForKey:@"isBoy"];
+//    [self willChangeValueForKey:@"isBoy"];
     _boy = boy;
-    [self didChangeValueForKey:@"isBoy"];
+//    [self didChangeValueForKey:@"isBoy"];
 }
 
 @end
