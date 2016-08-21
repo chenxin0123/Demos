@@ -28,7 +28,7 @@ bool isInShadown(CXPoint p) {
     return true;
 }
 
-///http://mp.weixin.qq.com/s?__biz=MzIwMTYzMzcwOQ==&mid=2650948463&idx=1&sn=04ea32e4fb276cc774465ff9e2d02afe&scene=1&srcid=0801yBsqNxPbcyic33x3JB1M#rd
+///计算阴影面积http://mp.weixin.qq.com/s?__biz=MzIwMTYzMzcwOQ==&mid=2650948463&idx=1&sn=04ea32e4fb276cc774465ff9e2d02afe&scene=1&srcid=0801yBsqNxPbcyic33x3JB1M#rd
 void d1() {
     srand(time(NULL));
     int sum = 0;
