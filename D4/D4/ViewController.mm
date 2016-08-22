@@ -62,9 +62,16 @@ bool isWhite(UInt32 color) {
     int r = color >> 24 & 0XFF;
     int g = color >> 16 & 0XFF;
     int b = color >> 8 & 0XFF;
-    //余弦定理 对比向量相似度
-    double ret = (r+g+b)*255/(sqrt(r*r+g*g+b*b)*sqrt(255*255*3));
-    return  ret >= 0.999;
+    
+    //余弦定理 对比向量相似度 有bug(0, 0, 0) 和 (255, 255, 255) 这种 x==y==z 的向量夹角是 0 然而他们并不相似
+//    double ret = (r+g+b)*255/(sqrt(r*r+g*g+b*b)*sqrt(255*255*3));
+//    return ret >= 0.999;
+    //直接计算向量距离
+#define com(x) (255-x)*(255-x)
+    double ret2 = sqrt(com(r)+com(g)+com(b));
+    return  ret2 <= 10;
+#undef com
+    
 }
 
 const int delta[4][2] = {{0,1},{1,0},{0,-1},{-1,0}};//下右上左
