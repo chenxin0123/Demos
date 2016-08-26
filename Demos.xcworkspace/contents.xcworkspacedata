@@ -38,6 +38,6 @@
       location = "group:cc/cc.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:/Users/CX/Desktop/work/other/mygit/Demos/Readme.md">
+      location = "group:Readme.md">
    </FileRef>
 </Workspace>

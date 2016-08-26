@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		904E02901D6FD33600EAD420 /* PaopapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 904E028F1D6FD33600EAD420 /* PaopapView.m */; };
 		E0CCC7461D65CF8000229E69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCC7451D65CF8000229E69 /* main.m */; };
 		E0CCC7491D65CF8000229E69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCC7481D65CF8000229E69 /* AppDelegate.m */; };
 		E0CCC74C1D65CF8000229E69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCC74B1D65CF8000229E69 /* ViewController.m */; };
 		E0CCC74F1D65CF8000229E69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0CCC74D1D65CF8000229E69 /* Main.storyboard */; };
 		E0CCC7511D65CF8000229E69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0CCC7501D65CF8000229E69 /* Assets.xcassets */; };
 		E0CCC7541D65CF8000229E69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0CCC7521D65CF8000229E69 /* LaunchScreen.storyboard */; };
-		E0CCC7731D65D4C400229E69 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E0CCC75C1D65D4C400229E69 /* LICENSE */; };
-		E0CCC7741D65D4C400229E69 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E0CCC75D1D65D4C400229E69 /* README.md */; };
-		E0CCC77E1D65D4C400229E69 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCC7721D65D4C400229E69 /* UIView+Layout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		904E028E1D6FD33600EAD420 /* PaopapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaopapView.h; sourceTree = "<group>"; };
+		904E028F1D6FD33600EAD420 /* PaopapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaopapView.m; sourceTree = "<group>"; };
 		E0CCC7411D65CF8000229E69 /* D2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CCC7451D65CF8000229E69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0CCC7471D65CF8000229E69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -29,10 +29,6 @@
 		E0CCC7501D65CF8000229E69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0CCC7531D65CF8000229E69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0CCC7551D65CF8000229E69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0CCC75C1D65D4C400229E69 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		E0CCC75D1D65D4C400229E69 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		E0CCC7711D65D4C400229E69 /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
-		E0CCC7721D65D4C400229E69 /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +61,6 @@
 		E0CCC7431D65CF8000229E69 /* D2 */ = {
 			isa = PBXGroup;
 			children = (
-				E0CCC75B1D65D4C400229E69 /* TZImagePickerController */,
 				E0CCC7471D65CF8000229E69 /* AppDelegate.h */,
 				E0CCC7481D65CF8000229E69 /* AppDelegate.m */,
 				E0CCC74A1D65CF8000229E69 /* ViewController.h */,
@@ -75,6 +70,8 @@
 				E0CCC7521D65CF8000229E69 /* LaunchScreen.storyboard */,
 				E0CCC7551D65CF8000229E69 /* Info.plist */,
 				E0CCC7441D65CF8000229E69 /* Supporting Files */,
+				904E028E1D6FD33600EAD420 /* PaopapView.h */,
+				904E028F1D6FD33600EAD420 /* PaopapView.m */,
 			);
 			path = D2;
 			sourceTree = "<group>";
@@ -85,17 +82,6 @@
 				E0CCC7451D65CF8000229E69 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E0CCC75B1D65D4C400229E69 /* TZImagePickerController */ = {
-			isa = PBXGroup;
-			children = (
-				E0CCC75C1D65D4C400229E69 /* LICENSE */,
-				E0CCC75D1D65D4C400229E69 /* README.md */,
-				E0CCC7711D65D4C400229E69 /* UIView+Layout.h */,
-				E0CCC7721D65D4C400229E69 /* UIView+Layout.m */,
-			);
-			path = TZImagePickerController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,7 +143,6 @@
 			files = (
 				E0CCC7541D65CF8000229E69 /* LaunchScreen.storyboard in Resources */,
 				E0CCC7511D65CF8000229E69 /* Assets.xcassets in Resources */,
-				E0CCC7731D65D4C400229E69 /* LICENSE in Resources */,
 				E0CCC74F1D65CF8000229E69 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,10 +155,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0CCC74C1D65CF8000229E69 /* ViewController.m in Sources */,
-				E0CCC77E1D65D4C400229E69 /* UIView+Layout.m in Sources */,
 				E0CCC7491D65CF8000229E69 /* AppDelegate.m in Sources */,
-				E0CCC7741D65D4C400229E69 /* README.md in Sources */,
 				E0CCC7461D65CF8000229E69 /* main.m in Sources */,
+				904E02901D6FD33600EAD420 /* PaopapView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +308,7 @@
 				E0CCC75A1D65CF8000229E69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
