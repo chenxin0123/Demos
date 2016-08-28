@@ -1,13 +1,11 @@
 //
-//  main.m
+//  area.m
 //  D3
 //
-//  Created by xian on 8/19/16.
+//  Created by CX on 8/27/16.
 //  Copyright © 2016 cx. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
-
 
 const int K = 10000000;
 const int N = 100000000;
@@ -30,16 +28,10 @@ bool isInShadown(CXPoint p) {
 
 ///计算阴影面积http://mp.weixin.qq.com/s?__biz=MzIwMTYzMzcwOQ==&mid=2650948463&idx=1&sn=04ea32e4fb276cc774465ff9e2d02afe&scene=1&srcid=0801yBsqNxPbcyic33x3JB1M#rd
 void d1() {
-    srand(time(NULL));
+    srand((unsigned)time(NULL));
     int sum = 0;
     for (int i=0; i<N; i++) {
         if (isInShadown(randomPoint())) {sum++;}
     }
-    printf("%4f",sum*1.0/N*100);
+    printf("%4f\n",sum*1.0/N*100);
 };
-
-
-int main(int argc, const char * argv[]) {
-    d1();
-    return 0;
-}

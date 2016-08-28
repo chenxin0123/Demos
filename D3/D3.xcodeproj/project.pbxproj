@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		909EAE841D66DB8300FF60E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 909EAE831D66DB8300FF60E5 /* main.m */; };
+		909EAE841D66DB8300FF60E5 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 909EAE831D66DB8300FF60E5 /* main.mm */; };
+		E0E652741D71D7F200C9E845 /* area.mm in Sources */ = {isa = PBXBuildFile; fileRef = E0E652731D71D7F200C9E845 /* area.mm */; };
+		E0E652771D71D8D400C9E845 /* sort.mm in Sources */ = {isa = PBXBuildFile; fileRef = E0E652761D71D8D400C9E845 /* sort.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +26,11 @@
 
 /* Begin PBXFileReference section */
 		909EAE801D66DB8300FF60E5 /* D3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = D3; sourceTree = BUILT_PRODUCTS_DIR; };
-		909EAE831D66DB8300FF60E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		909EAE831D66DB8300FF60E5 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		E0E652721D71D7F200C9E845 /* area.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = area.h; sourceTree = "<group>"; };
+		E0E652731D71D7F200C9E845 /* area.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = area.mm; sourceTree = "<group>"; };
+		E0E652751D71D8D400C9E845 /* sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sort.h; sourceTree = "<group>"; };
+		E0E652761D71D8D400C9E845 /* sort.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = sort.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +63,11 @@
 		909EAE821D66DB8300FF60E5 /* D3 */ = {
 			isa = PBXGroup;
 			children = (
-				909EAE831D66DB8300FF60E5 /* main.m */,
+				909EAE831D66DB8300FF60E5 /* main.mm */,
+				E0E652721D71D7F200C9E845 /* area.h */,
+				E0E652731D71D7F200C9E845 /* area.mm */,
+				E0E652751D71D8D400C9E845 /* sort.h */,
+				E0E652761D71D8D400C9E845 /* sort.mm */,
 			);
 			path = D3;
 			sourceTree = "<group>";
@@ -118,7 +128,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				909EAE841D66DB8300FF60E5 /* main.m in Sources */,
+				E0E652741D71D7F200C9E845 /* area.mm in Sources */,
+				909EAE841D66DB8300FF60E5 /* main.mm in Sources */,
+				E0E652771D71D8D400C9E845 /* sort.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +251,7 @@
 				909EAE891D66DB8300FF60E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
