@@ -13,6 +13,9 @@
 		E060EBC61CCB228F00DE97FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E060EBC41CCB228F00DE97FB /* Main.storyboard */; };
 		E060EBC81CCB228F00DE97FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E060EBC71CCB228F00DE97FB /* Assets.xcassets */; };
 		E060EBCB1CCB228F00DE97FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E060EBC91CCB228F00DE97FB /* LaunchScreen.storyboard */; };
+		E0E6527A1D747F2B00C9E845 /* TUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E652791D747F2B00C9E845 /* TUIView.m */; };
+		E0E6527D1D747F6B00C9E845 /* TUIImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E6527C1D747F6B00C9E845 /* TUIImageView.m */; };
+		E0E652801D747F8D00C9E845 /* TUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E6527F1D747F8D00C9E845 /* TUIButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		E060EBC71CCB228F00DE97FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E060EBCA1CCB228F00DE97FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E060EBCC1CCB228F00DE97FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0E652781D747F2B00C9E845 /* TUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIView.h; sourceTree = "<group>"; };
+		E0E652791D747F2B00C9E845 /* TUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIView.m; sourceTree = "<group>"; };
+		E0E6527B1D747F6B00C9E845 /* TUIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIImageView.h; sourceTree = "<group>"; };
+		E0E6527C1D747F6B00C9E845 /* TUIImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIImageView.m; sourceTree = "<group>"; };
+		E0E6527E1D747F8D00C9E845 /* TUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIButton.h; sourceTree = "<group>"; };
+		E0E6527F1D747F8D00C9E845 /* TUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +76,12 @@
 				E060EBC91CCB228F00DE97FB /* LaunchScreen.storyboard */,
 				E060EBCC1CCB228F00DE97FB /* Info.plist */,
 				E060EBBB1CCB228F00DE97FB /* Supporting Files */,
+				E0E652781D747F2B00C9E845 /* TUIView.h */,
+				E0E652791D747F2B00C9E845 /* TUIView.m */,
+				E0E6527B1D747F6B00C9E845 /* TUIImageView.h */,
+				E0E6527C1D747F6B00C9E845 /* TUIImageView.m */,
+				E0E6527E1D747F8D00C9E845 /* TUIButton.h */,
+				E0E6527F1D747F8D00C9E845 /* TUIButton.m */,
 			);
 			path = cc;
 			sourceTree = "<group>";
@@ -150,6 +165,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E060EBC31CCB228F00DE97FB /* ViewController.m in Sources */,
+				E0E6527D1D747F6B00C9E845 /* TUIImageView.m in Sources */,
+				E0E652801D747F8D00C9E845 /* TUIButton.m in Sources */,
+				E0E6527A1D747F2B00C9E845 /* TUIView.m in Sources */,
 				E060EBC01CCB228F00DE97FB /* AppDelegate.m in Sources */,
 				E060EBBD1CCB228F00DE97FB /* main.m in Sources */,
 			);

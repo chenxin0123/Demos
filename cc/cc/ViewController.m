@@ -7,108 +7,62 @@
 //
 
 #import "ViewController.h"
+#import "TUIView.h"
+#import "TUIButton.h"
+#import "TUIImageView.h"
+
+
+/**
+ 结论：
+ 1.子视图测试顺序与addSubView顺序相反
+ 2.hitTest:withEvent:内部调用子视图的pointInside:withEvent:
+ 3.hidden|disabled user interactions|alpha<=0.01 hitTest:withEvent:返回nil 否则如果没有子视图则返回self
+ 4.hitTest:withEvent:返回非nil的View 处理结束 
+ 5.如果hitTest:withEvent:返回的View是个UIButton 其frame跟touch point距离太大 该Button仍然不处理该事件 经测试最大范围为上下左右70%宽高 
+   所以如果要让一个View始终处理某个事件 重写该Button的pointInside:withEvent:比较靠谱 即使是该Button的hitTest:withEvent:中返回self也有此范围限制 
+   原因是UIButton重写了pointMostlyInside:withEvent:
+ */
 
 UIButton *gbtn;
-
-
-@interface TUIButton : UIButton
-
-@end
-
-@implementation TUIButton
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    
-//    NSLog(@"%@:%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
-//    [super touchesBegan:touches withEvent:event];
-////    [self.nextResponder touchesBegan:touches withEvent:event];
-//    
-//}
-//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-//    
-//    id v = [super hitTest:point withEvent:event];
-//
-//    return self;
-//}
-- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
-    return YES;
-}
-
-@end
-
-
-@interface TUIImageView : UIImageView
-
-@end
-@implementation TUIImageView
-//
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
-    NSLog(@"%@:%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
-    [super touchesBegan:touches withEvent:event];
-    
-}
-
-
-- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
-    return YES;
-}
-//
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    
-    id v = [super hitTest:point withEvent:event];
-//    if (!v) {
-//        return self;
-//    }
-//    if (v == self) {
-//        return gbtn;
-//    }
-    return gbtn;
-}
-@end
-
+UIImageView *gimg;
 @interface ViewController ()
-
+@property (nonatomic, strong) TUIView *contentView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+ 
+    self.contentView = [TUIView new];
+    [self.view addSubview:self.contentView];
+    self.contentView.frame = self.view.bounds;
+//    self.contentView.alpha = 0.01;
+//    self.contentView.userInteractionEnabled = NO;
+//    self.contentView.hidden = YES;
     
-    UIScrollView *scro = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [self.view addSubview:scro];
-    scro.pagingEnabled = YES;
-    
-    CGFloat w = [UIScreen mainScreen].bounds.size.width;
-    CGFloat h = [UIScreen mainScreen].bounds.size.height;
-    
-    scro.contentSize = CGSizeMake(scro.frame.size.width*5, scro.frame.size.height);
-    for (int i=0; i<5; i++) {
-        UIView *v = [[UIView alloc] initWithFrame:CGRectMake(i*w, 0, w, h)];
-        [scro addSubview:v];
-        v.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255. blue:arc4random()%255/255. alpha:1];
-    }
-    
-    TUIButton *btn = [TUIButton buttonWithType:UIButtonTypeCustom];
-    btn.backgroundColor = [UIColor yellowColor];
-    [btn setTitle:@"touch me" forState:UIControlStateNormal];
+    TUIButton *btn = [TUIButton button];
     [btn addTarget:self action:@selector(btnTouch:) forControlEvents:UIControlEventTouchUpInside];
-    btn.frame = CGRectMake(0, h/2.0+100, w,100);
-    btn.layer.borderWidth = 2;
-    btn.layer.borderColor = [UIColor redColor].CGColor;
-    [self.view addSubview:btn];
     gbtn = btn;
     
-    TUIImageView *imgv = [[TUIImageView alloc] initWithImage:nil];
-    imgv.frame = CGRectMake(0, h/2.0, w, h/2);
+    TUIImageView *imgv = [[TUIImageView alloc] initWithImage:[UIImage imageNamed:@"image"]];
+    imgv.frame = CGRectMake(0, 220, 320, 200);
     imgv.backgroundColor = [UIColor blackColor];
-    imgv.alpha = 0.8;
+//    imgv.alpha = 0.011;
 //    imgv.hidden = YES;
     imgv.userInteractionEnabled = YES;
-    [self.view addSubview:imgv];
+    UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewTouch:)];
+    [imgv addGestureRecognizer:ges];
+    gimg = imgv;
+    [self.contentView addSubview:btn];
+    [self.contentView addSubview:imgv];
 }
 
 - (void)btnTouch:(id)sender {
+    NSLog(@"%@:%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
+}
+
+- (void)imageViewTouch:(id)sender {
     NSLog(@"%@:%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
 }
 

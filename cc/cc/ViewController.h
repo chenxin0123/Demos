@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern UIButton *gbtn;
+extern UIImageView *gimg;
 @interface ViewController : UIViewController
 
 
