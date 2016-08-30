@@ -16,26 +16,27 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
-        UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTouch:)];
-        [self addGestureRecognizer:ges];
     }
     return self;
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    NSLog(@"%@:%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
-    NSLog(@"%@",NSStringFromCGPoint(point));
-    UIView *v = [super hitTest:point withEvent:event];
-    return gbtn;
-}
-//- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
 //    NSLog(@"%@:%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
-//    return [super pointInside:point withEvent:event];
-//}
-
-- (void)viewTouch:(id)sender {
-    NSLog(@"%@:%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
+    UIView *v = [super hitTest:point withEvent:event];
+    return v;
 }
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+    NSLog(@"%@:%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
+//    return [super pointInside:point withEvent:event];
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"%@:%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
+    [super touchesBegan:touches withEvent:event];
+}
+
 
 
 @end

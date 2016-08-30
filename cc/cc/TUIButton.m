@@ -26,10 +26,17 @@
 //}
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
     NSLog(@"%@:%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
-    return [super pointInside:point withEvent:event];
+    return YES;//[super pointInside:point withEvent:event];
 }
+
+///UIButton用这个方法来判断touch是inside还是outside
 //- (BOOL)pointMostlyInside:(CGPoint)point withEvent:(UIEvent *)event {
 //    return YES;
 //}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"%@:%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
+    [super touchesBegan:touches withEvent:event];
+}
 
 @end

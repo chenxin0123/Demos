@@ -22,4 +22,9 @@
 //    //    return YES;
 //}
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"%@:%@",NSStringFromClass([self class]),NSStringFromSelector(_cmd));
+    [super touchesBegan:touches withEvent:event];
+}
+
 @end
