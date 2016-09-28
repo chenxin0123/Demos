@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E010E2AC1D9C103500ADA099 /* AbstractFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2A31D9C103500ADA099 /* AbstractFactory.cpp */; };
+		E010E2AD1D9C103500ADA099 /* AbstractProduct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2A51D9C103500ADA099 /* AbstractProduct.cpp */; };
+		E010E2AE1D9C103500ADA099 /* Factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2A81D9C103500ADA099 /* Factory.cpp */; };
+		E010E2AF1D9C103500ADA099 /* Product.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2AA1D9C103500ADA099 /* Product.cpp */; };
 		E0140D6A1D8D272400992482 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0140D691D8D272400992482 /* main.cpp */; };
-		E0140D731D8D275B00992482 /* Product.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0140D711D8D275B00992482 /* Product.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,10 +27,37 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E010E2A31D9C103500ADA099 /* AbstractFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AbstractFactory.cpp; sourceTree = "<group>"; };
+		E010E2A41D9C103500ADA099 /* AbstractFactory.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AbstractFactory.hpp; sourceTree = "<group>"; };
+		E010E2A51D9C103500ADA099 /* AbstractProduct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AbstractProduct.cpp; sourceTree = "<group>"; };
+		E010E2A61D9C103500ADA099 /* AbstractProduct.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AbstractProduct.hpp; sourceTree = "<group>"; };
+		E010E2A81D9C103500ADA099 /* Factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Factory.cpp; sourceTree = "<group>"; };
+		E010E2A91D9C103500ADA099 /* Factory.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Factory.hpp; sourceTree = "<group>"; };
+		E010E2AA1D9C103500ADA099 /* Product.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Product.cpp; sourceTree = "<group>"; };
+		E010E2AB1D9C103500ADA099 /* Product.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Product.hpp; sourceTree = "<group>"; };
+		E010E2B11D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2B31D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2B51D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2B71D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2B91D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2BB1D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2BD1D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2BF1D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2C11D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2C31D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2C51D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2C71D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2C91D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2CB1D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2CD1D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2CF1D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2D11D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2D31D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2D51D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2D71D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2D91D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E0140D661D8D272400992482 /* DesignPatternCPP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DesignPatternCPP; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0140D691D8D272400992482 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		E0140D711D8D275B00992482 /* Product.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Product.cpp; sourceTree = "<group>"; };
-		E0140D721D8D275B00992482 /* Product.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Product.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +71,196 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E010E2A21D9C103500ADA099 /* AbstractFactory */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2A31D9C103500ADA099 /* AbstractFactory.cpp */,
+				E010E2A41D9C103500ADA099 /* AbstractFactory.hpp */,
+				E010E2A51D9C103500ADA099 /* AbstractProduct.cpp */,
+				E010E2A61D9C103500ADA099 /* AbstractProduct.hpp */,
+			);
+			path = AbstractFactory;
+			sourceTree = "<group>";
+		};
+		E010E2A71D9C103500ADA099 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2A81D9C103500ADA099 /* Factory.cpp */,
+				E010E2A91D9C103500ADA099 /* Factory.hpp */,
+				E010E2AA1D9C103500ADA099 /* Product.cpp */,
+				E010E2AB1D9C103500ADA099 /* Product.hpp */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		E010E2B01D9C11C200ADA099 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2B11D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		E010E2B21D9C11C200ADA099 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2B31D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Bridge;
+			sourceTree = "<group>";
+		};
+		E010E2B41D9C11C200ADA099 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2B51D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		E010E2B61D9C11C200ADA099 /* Chain of Responsibility  */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2B71D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = "Chain of Responsibility ";
+			sourceTree = "<group>";
+		};
+		E010E2B81D9C11C200ADA099 /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2B91D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Command;
+			sourceTree = "<group>";
+		};
+		E010E2BA1D9C11C200ADA099 /* Composite */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2BB1D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Composite;
+			sourceTree = "<group>";
+		};
+		E010E2BC1D9C11C200ADA099 /* Decorator */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2BD1D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Decorator;
+			sourceTree = "<group>";
+		};
+		E010E2BE1D9C11C200ADA099 /* Facade */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2BF1D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Facade;
+			sourceTree = "<group>";
+		};
+		E010E2C01D9C11C200ADA099 /* Flyweight */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2C11D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Flyweight;
+			sourceTree = "<group>";
+		};
+		E010E2C21D9C11C200ADA099 /* Interpreter */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2C31D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Interpreter;
+			sourceTree = "<group>";
+		};
+		E010E2C41D9C11C200ADA099 /* Iterator */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2C51D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Iterator;
+			sourceTree = "<group>";
+		};
+		E010E2C61D9C11C200ADA099 /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2C71D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Mediator;
+			sourceTree = "<group>";
+		};
+		E010E2C81D9C11C200ADA099 /* Memento */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2C91D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Memento;
+			sourceTree = "<group>";
+		};
+		E010E2CA1D9C11C200ADA099 /* Observer */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2CB1D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Observer;
+			sourceTree = "<group>";
+		};
+		E010E2CC1D9C11C200ADA099 /* Prototype */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2CD1D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Prototype;
+			sourceTree = "<group>";
+		};
+		E010E2CE1D9C11C200ADA099 /* Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2CF1D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Proxy;
+			sourceTree = "<group>";
+		};
+		E010E2D01D9C11C200ADA099 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2D11D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Singleton;
+			sourceTree = "<group>";
+		};
+		E010E2D21D9C11C200ADA099 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2D31D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		E010E2D41D9C11C200ADA099 /* Strategy */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2D51D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Strategy;
+			sourceTree = "<group>";
+		};
+		E010E2D61D9C11C200ADA099 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2D71D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		E010E2D81D9C11C200ADA099 /* Visitor */ = {
+			isa = PBXGroup;
+			children = (
+				E010E2D91D9C11C200ADA099 /* .gitkeep */,
+			);
+			path = Visitor;
+			sourceTree = "<group>";
+		};
 		E0140D5D1D8D272400992482 = {
 			isa = PBXGroup;
 			children = (
@@ -60,19 +280,32 @@
 		E0140D681D8D272400992482 /* DesignPatternCPP */ = {
 			isa = PBXGroup;
 			children = (
-				E0140D701D8D274000992482 /* Factory */,
 				E0140D691D8D272400992482 /* main.cpp */,
+				E010E2B01D9C11C200ADA099 /* Adapter */,
+				E010E2B21D9C11C200ADA099 /* Bridge */,
+				E010E2B41D9C11C200ADA099 /* Builder */,
+				E010E2B61D9C11C200ADA099 /* Chain of Responsibility  */,
+				E010E2B81D9C11C200ADA099 /* Command */,
+				E010E2BA1D9C11C200ADA099 /* Composite */,
+				E010E2BC1D9C11C200ADA099 /* Decorator */,
+				E010E2BE1D9C11C200ADA099 /* Facade */,
+				E010E2C01D9C11C200ADA099 /* Flyweight */,
+				E010E2C21D9C11C200ADA099 /* Interpreter */,
+				E010E2C41D9C11C200ADA099 /* Iterator */,
+				E010E2C61D9C11C200ADA099 /* Mediator */,
+				E010E2C81D9C11C200ADA099 /* Memento */,
+				E010E2CA1D9C11C200ADA099 /* Observer */,
+				E010E2CC1D9C11C200ADA099 /* Prototype */,
+				E010E2CE1D9C11C200ADA099 /* Proxy */,
+				E010E2D01D9C11C200ADA099 /* Singleton */,
+				E010E2D21D9C11C200ADA099 /* State */,
+				E010E2D41D9C11C200ADA099 /* Strategy */,
+				E010E2D61D9C11C200ADA099 /* Template */,
+				E010E2D81D9C11C200ADA099 /* Visitor */,
+				E010E2A21D9C103500ADA099 /* AbstractFactory */,
+				E010E2A71D9C103500ADA099 /* Factory */,
 			);
 			path = DesignPatternCPP;
-			sourceTree = "<group>";
-		};
-		E0140D701D8D274000992482 /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				E0140D711D8D275B00992482 /* Product.cpp */,
-				E0140D721D8D275B00992482 /* Product.hpp */,
-			);
-			name = Factory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,8 +364,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E010E2AE1D9C103500ADA099 /* Factory.cpp in Sources */,
+				E010E2AC1D9C103500ADA099 /* AbstractFactory.cpp in Sources */,
+				E010E2AD1D9C103500ADA099 /* AbstractProduct.cpp in Sources */,
+				E010E2AF1D9C103500ADA099 /* Product.cpp in Sources */,
 				E0140D6A1D8D272400992482 /* main.cpp in Sources */,
-				E0140D731D8D275B00992482 /* Product.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +489,7 @@
 				E0140D6F1D8D272400992482 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
