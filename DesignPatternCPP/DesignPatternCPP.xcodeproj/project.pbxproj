@@ -11,6 +11,9 @@
 		E010E2AD1D9C103500ADA099 /* AbstractProduct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2A51D9C103500ADA099 /* AbstractProduct.cpp */; };
 		E010E2AE1D9C103500ADA099 /* Factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2A81D9C103500ADA099 /* Factory.cpp */; };
 		E010E2AF1D9C103500ADA099 /* Product.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2AA1D9C103500ADA099 /* Product.cpp */; };
+		E010E2DC1D9D514A00ADA099 /* Singleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2DA1D9D514A00ADA099 /* Singleton.cpp */; };
+		E010E2DF1D9D53BE00ADA099 /* Builder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2DD1D9D53BE00ADA099 /* Builder.cpp */; };
+		E010E2E21D9D543300ADA099 /* Director.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2E01D9D543300ADA099 /* Director.cpp */; };
 		E0140D6A1D8D272400992482 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0140D691D8D272400992482 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +59,12 @@
 		E010E2D51D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2D71D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2D91D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E010E2DA1D9D514A00ADA099 /* Singleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Singleton.cpp; sourceTree = "<group>"; };
+		E010E2DB1D9D514A00ADA099 /* Singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Singleton.hpp; sourceTree = "<group>"; };
+		E010E2DD1D9D53BE00ADA099 /* Builder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Builder.cpp; sourceTree = "<group>"; };
+		E010E2DE1D9D53BE00ADA099 /* Builder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Builder.hpp; sourceTree = "<group>"; };
+		E010E2E01D9D543300ADA099 /* Director.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Director.cpp; sourceTree = "<group>"; };
+		E010E2E11D9D543300ADA099 /* Director.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Director.hpp; sourceTree = "<group>"; };
 		E0140D661D8D272400992482 /* DesignPatternCPP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DesignPatternCPP; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0140D691D8D272400992482 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +122,10 @@
 			isa = PBXGroup;
 			children = (
 				E010E2B51D9C11C200ADA099 /* .gitkeep */,
+				E010E2DD1D9D53BE00ADA099 /* Builder.cpp */,
+				E010E2DE1D9D53BE00ADA099 /* Builder.hpp */,
+				E010E2E01D9D543300ADA099 /* Director.cpp */,
+				E010E2E11D9D543300ADA099 /* Director.hpp */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -225,6 +238,8 @@
 			isa = PBXGroup;
 			children = (
 				E010E2D11D9C11C200ADA099 /* .gitkeep */,
+				E010E2DA1D9D514A00ADA099 /* Singleton.cpp */,
+				E010E2DB1D9D514A00ADA099 /* Singleton.hpp */,
 			);
 			path = Singleton;
 			sourceTree = "<group>";
@@ -334,7 +349,7 @@
 		E0140D5E1D8D272400992482 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = cx;
 				TargetAttributes = {
 					E0140D651D8D272400992482 = {
@@ -364,9 +379,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E010E2DF1D9D53BE00ADA099 /* Builder.cpp in Sources */,
+				E010E2E21D9D543300ADA099 /* Director.cpp in Sources */,
 				E010E2AE1D9C103500ADA099 /* Factory.cpp in Sources */,
 				E010E2AC1D9C103500ADA099 /* AbstractFactory.cpp in Sources */,
 				E010E2AD1D9C103500ADA099 /* AbstractProduct.cpp in Sources */,
+				E010E2DC1D9D514A00ADA099 /* Singleton.cpp in Sources */,
 				E010E2AF1D9C103500ADA099 /* Product.cpp in Sources */,
 				E0140D6A1D8D272400992482 /* main.cpp in Sources */,
 			);
@@ -389,8 +407,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -433,8 +453,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
