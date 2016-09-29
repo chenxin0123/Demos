@@ -19,6 +19,8 @@
 #include "Builder.hpp"
 #include "Director.hpp"
 
+#include "Prototype.hpp"
+
 using namespace std;
 
 ///AbstractFactory 模式和 Factory 模式的区别是初学(使用)设计模式时候的一个容易引 起困惑的地方。实际上,AbstractFactory 模式是为创建一组(有多类)相关或依赖的对象提 供创建接口,而 Factory 模式正如我在相应的文档中分析的是为一类对象提供创建接口或延 迟对象的创建到子类中实现。并且可以看到,AbstractFactory 模式通常都是使用 Factory 模 式实现(ConcreteFactory1)。
@@ -54,11 +56,29 @@ void BuilderTest() {
     d->Construct();
 }
 
+///Prototype 模式提供了一个通过已存在对象进行新对象创建的接口
+///实际上 Prototype 模式和 Builder 模式、 AbstractFactory 模式都是通过一个类(对象实例)来专门负责对象的创建工作(工厂对象), 它们之间的区别是:
+///Builder 模式重在复杂对象的一步步创建 AbstractFactory 模式重在产生多个相互依赖类的对象,而 Prototype 模式重在从自身复制自己
+void PrototypeTest() {
+    Prototype* p = new ConcretePrototype();
+    Prototype* p1 = p->Clone();
+    delete p1;
+}
+
+//void Test() {
+//    
+//}
+
+//void Test() {
+//    
+//}
+
 void LogEmptyLine() {
     cout<<endl;
 }
 
 int main(int argc, const char * argv[]) {
+    //创建型设计模式
     FactoryTest();
     LogEmptyLine();
     AbstractFactoryTest();
@@ -67,5 +87,8 @@ int main(int argc, const char * argv[]) {
     LogEmptyLine();
     BuilderTest();
     LogEmptyLine();
+    PrototypeTest();
+    LogEmptyLine();
+    //结构型
     return 0;
 }
