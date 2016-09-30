@@ -15,6 +15,8 @@
 		E010E2DF1D9D53BE00ADA099 /* Builder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2DD1D9D53BE00ADA099 /* Builder.cpp */; };
 		E010E2E21D9D543300ADA099 /* Director.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2E01D9D543300ADA099 /* Director.cpp */; };
 		E010E2E51D9D5AF400ADA099 /* Prototype.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2E31D9D5AF400ADA099 /* Prototype.cpp */; };
+		E010E2E81D9E966400ADA099 /* Abstraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2E61D9E966400ADA099 /* Abstraction.cpp */; };
+		E010E2EB1D9E96A600ADA099 /* AbstractionImp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2E91D9E96A600ADA099 /* AbstractionImp.cpp */; };
 		E0140D6A1D8D272400992482 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0140D691D8D272400992482 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +55,6 @@
 		E010E2C71D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2C91D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2CB1D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		E010E2CD1D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2CF1D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2D11D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2D31D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -68,6 +69,10 @@
 		E010E2E11D9D543300ADA099 /* Director.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Director.hpp; sourceTree = "<group>"; };
 		E010E2E31D9D5AF400ADA099 /* Prototype.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Prototype.cpp; sourceTree = "<group>"; };
 		E010E2E41D9D5AF400ADA099 /* Prototype.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Prototype.hpp; sourceTree = "<group>"; };
+		E010E2E61D9E966400ADA099 /* Abstraction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Abstraction.cpp; sourceTree = "<group>"; };
+		E010E2E71D9E966400ADA099 /* Abstraction.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Abstraction.hpp; sourceTree = "<group>"; };
+		E010E2E91D9E96A600ADA099 /* AbstractionImp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AbstractionImp.cpp; sourceTree = "<group>"; };
+		E010E2EA1D9E96A600ADA099 /* AbstractionImp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AbstractionImp.hpp; sourceTree = "<group>"; };
 		E0140D661D8D272400992482 /* DesignPatternCPP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DesignPatternCPP; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0140D691D8D272400992482 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +122,10 @@
 			isa = PBXGroup;
 			children = (
 				E010E2B31D9C11C200ADA099 /* .gitkeep */,
+				E010E2E61D9E966400ADA099 /* Abstraction.cpp */,
+				E010E2E71D9E966400ADA099 /* Abstraction.hpp */,
+				E010E2E91D9E96A600ADA099 /* AbstractionImp.cpp */,
+				E010E2EA1D9E96A600ADA099 /* AbstractionImp.hpp */,
 			);
 			path = Bridge;
 			sourceTree = "<group>";
@@ -224,7 +233,6 @@
 		E010E2CC1D9C11C200ADA099 /* Prototype */ = {
 			isa = PBXGroup;
 			children = (
-				E010E2CD1D9C11C200ADA099 /* .gitkeep */,
 				E010E2E31D9D5AF400ADA099 /* Prototype.cpp */,
 				E010E2E41D9D5AF400ADA099 /* Prototype.hpp */,
 			);
@@ -386,8 +394,10 @@
 			files = (
 				E010E2DF1D9D53BE00ADA099 /* Builder.cpp in Sources */,
 				E010E2E51D9D5AF400ADA099 /* Prototype.cpp in Sources */,
+				E010E2EB1D9E96A600ADA099 /* AbstractionImp.cpp in Sources */,
 				E010E2E21D9D543300ADA099 /* Director.cpp in Sources */,
 				E010E2AE1D9C103500ADA099 /* Factory.cpp in Sources */,
+				E010E2E81D9E966400ADA099 /* Abstraction.cpp in Sources */,
 				E010E2AC1D9C103500ADA099 /* AbstractFactory.cpp in Sources */,
 				E010E2AD1D9C103500ADA099 /* AbstractProduct.cpp in Sources */,
 				E010E2DC1D9D514A00ADA099 /* Singleton.cpp in Sources */,

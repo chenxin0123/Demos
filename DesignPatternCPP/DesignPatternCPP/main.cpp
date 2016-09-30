@@ -21,6 +21,9 @@
 
 #include "Prototype.hpp"
 
+#include "Abstraction.hpp"
+#include "AbstractionImp.hpp"
+
 using namespace std;
 
 ///AbstractFactory 模式和 Factory 模式的区别是初学(使用)设计模式时候的一个容易引 起困惑的地方。实际上,AbstractFactory 模式是为创建一组(有多类)相关或依赖的对象提 供创建接口,而 Factory 模式正如我在相应的文档中分析的是为一类对象提供创建接口或延 迟对象的创建到子类中实现。并且可以看到,AbstractFactory 模式通常都是使用 Factory 模 式实现(ConcreteFactory1)。
@@ -65,30 +68,34 @@ void PrototypeTest() {
     delete p1;
 }
 
-//void Test() {
-//    
-//}
-
-//void Test() {
-//    
-//}
-
-void LogEmptyLine() {
-    cout<<endl;
+///在软件系统中，某些类型由于自身的逻辑，它具有两个或多个维度的变化，那么如何应对这种“多维度的变化”？如何利用面向对象的技术来使得该类型能够轻松的沿着多个方向进行变化，而又不引入额外的复杂度？这就要使用Bridge模式。
+///将抽象部分与实现部分分离，使它们都可以独立的变化
+///桥接模式中的所谓脱耦，就是指在一个软件系统的抽象化和实现化之间使用关联关系（组合或者聚合关系）而不是继承关系，从而使两者可以相对独立地变化，这就是桥接模式的用意。
+void BridgeTest() {
+    AbstractionImp* imp = new ConcreteAbstractionImpA();
+    Abstraction* abs = new RefinedAbstraction(imp);
+    abs->Operation();
 }
 
+//void Test() {
+//    
+//}
+
 int main(int argc, const char * argv[]) {
+#define CallAndLog(fn) cout<<#fn<<":"<<endl;fn##Test();cout<<endl;
     //创建型设计模式
-    FactoryTest();
-    LogEmptyLine();
-    AbstractFactoryTest();
-    LogEmptyLine();
-    SingletonTest();
-    LogEmptyLine();
-    BuilderTest();
-    LogEmptyLine();
-    PrototypeTest();
-    LogEmptyLine();
+    CallAndLog(Factory)
+    CallAndLog(AbstractFactory)
+    CallAndLog(Singleton)
+    CallAndLog(Builder)
+    CallAndLog(Prototype)
+    
     //结构型
+    CallAndLog(Bridge)
+//    CallAndLog(FactoryTest)
+//    CallAndLog(FactoryTest)
+//    CallAndLog(FactoryTest)
+//    CallAndLog(FactoryTest)
+
     return 0;
 }
