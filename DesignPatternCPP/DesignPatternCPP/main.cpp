@@ -24,6 +24,8 @@
 #include "Abstraction.hpp"
 #include "AbstractionImp.hpp"
 
+#include "Adapter.hpp"
+
 using namespace std;
 
 ///AbstractFactory 模式和 Factory 模式的区别是初学(使用)设计模式时候的一个容易引 起困惑的地方。实际上,AbstractFactory 模式是为创建一组(有多类)相关或依赖的对象提 供创建接口,而 Factory 模式正如我在相应的文档中分析的是为一类对象提供创建接口或延 迟对象的创建到子类中实现。并且可以看到,AbstractFactory 模式通常都是使用 Factory 模 式实现(ConcreteFactory1)。
@@ -77,6 +79,19 @@ void BridgeTest() {
     abs->Operation();
 }
 
+///Adapter适配器设计模式中有3个重要角色：被适配者Adaptee，适配器Adapter和目标对象Target
+///其中两个现存的想要组合到一起的类分别是被适配者Adaptee和目标对象Target角色，我们需要创建一个适配器Adapter将其组合在一起。
+void AdapterTest() {
+#ifdef AdapterClassMode
+    Target* adt = new Adapter();
+    adt->Request();
+#else
+    Adaptee* ade = new Adaptee;
+    Target* adt = new Adapter(ade);
+    adt->Request();
+#endif
+}
+
 //void Test() {
 //    
 //}
@@ -92,7 +107,7 @@ int main(int argc, const char * argv[]) {
     
     //结构型
     CallAndLog(Bridge)
-//    CallAndLog(FactoryTest)
+    CallAndLog(Adapter)
 //    CallAndLog(FactoryTest)
 //    CallAndLog(FactoryTest)
 //    CallAndLog(FactoryTest)

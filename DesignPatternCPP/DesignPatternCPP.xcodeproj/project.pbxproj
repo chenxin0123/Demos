@@ -17,6 +17,7 @@
 		E010E2E51D9D5AF400ADA099 /* Prototype.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2E31D9D5AF400ADA099 /* Prototype.cpp */; };
 		E010E2E81D9E966400ADA099 /* Abstraction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2E61D9E966400ADA099 /* Abstraction.cpp */; };
 		E010E2EB1D9E96A600ADA099 /* AbstractionImp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2E91D9E96A600ADA099 /* AbstractionImp.cpp */; };
+		E010E2EE1D9EB63F00ADA099 /* Adapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2EC1D9EB63F00ADA099 /* Adapter.cpp */; };
 		E0140D6A1D8D272400992482 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0140D691D8D272400992482 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -41,9 +42,6 @@
 		E010E2A91D9C103500ADA099 /* Factory.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Factory.hpp; sourceTree = "<group>"; };
 		E010E2AA1D9C103500ADA099 /* Product.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Product.cpp; sourceTree = "<group>"; };
 		E010E2AB1D9C103500ADA099 /* Product.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Product.hpp; sourceTree = "<group>"; };
-		E010E2B11D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		E010E2B31D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		E010E2B51D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2B71D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2B91D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2BB1D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -56,7 +54,6 @@
 		E010E2C91D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2CB1D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2CF1D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		E010E2D11D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2D31D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2D51D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2D71D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -73,6 +70,8 @@
 		E010E2E71D9E966400ADA099 /* Abstraction.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Abstraction.hpp; sourceTree = "<group>"; };
 		E010E2E91D9E96A600ADA099 /* AbstractionImp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AbstractionImp.cpp; sourceTree = "<group>"; };
 		E010E2EA1D9E96A600ADA099 /* AbstractionImp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AbstractionImp.hpp; sourceTree = "<group>"; };
+		E010E2EC1D9EB63F00ADA099 /* Adapter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Adapter.cpp; sourceTree = "<group>"; };
+		E010E2ED1D9EB63F00ADA099 /* Adapter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Adapter.hpp; sourceTree = "<group>"; };
 		E0140D661D8D272400992482 /* DesignPatternCPP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DesignPatternCPP; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0140D691D8D272400992482 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,7 +112,8 @@
 		E010E2B01D9C11C200ADA099 /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
-				E010E2B11D9C11C200ADA099 /* .gitkeep */,
+				E010E2EC1D9EB63F00ADA099 /* Adapter.cpp */,
+				E010E2ED1D9EB63F00ADA099 /* Adapter.hpp */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -121,7 +121,6 @@
 		E010E2B21D9C11C200ADA099 /* Bridge */ = {
 			isa = PBXGroup;
 			children = (
-				E010E2B31D9C11C200ADA099 /* .gitkeep */,
 				E010E2E61D9E966400ADA099 /* Abstraction.cpp */,
 				E010E2E71D9E966400ADA099 /* Abstraction.hpp */,
 				E010E2E91D9E96A600ADA099 /* AbstractionImp.cpp */,
@@ -133,7 +132,6 @@
 		E010E2B41D9C11C200ADA099 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
-				E010E2B51D9C11C200ADA099 /* .gitkeep */,
 				E010E2DD1D9D53BE00ADA099 /* Builder.cpp */,
 				E010E2DE1D9D53BE00ADA099 /* Builder.hpp */,
 				E010E2E01D9D543300ADA099 /* Director.cpp */,
@@ -250,7 +248,6 @@
 		E010E2D01D9C11C200ADA099 /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
-				E010E2D11D9C11C200ADA099 /* .gitkeep */,
 				E010E2DA1D9D514A00ADA099 /* Singleton.cpp */,
 				E010E2DB1D9D514A00ADA099 /* Singleton.hpp */,
 			);
@@ -401,6 +398,7 @@
 				E010E2AC1D9C103500ADA099 /* AbstractFactory.cpp in Sources */,
 				E010E2AD1D9C103500ADA099 /* AbstractProduct.cpp in Sources */,
 				E010E2DC1D9D514A00ADA099 /* Singleton.cpp in Sources */,
+				E010E2EE1D9EB63F00ADA099 /* Adapter.cpp in Sources */,
 				E010E2AF1D9C103500ADA099 /* Product.cpp in Sources */,
 				E0140D6A1D8D272400992482 /* main.cpp in Sources */,
 			);
