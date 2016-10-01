@@ -32,6 +32,9 @@
 #include "Composite.hpp"
 #include "Leaf.hpp"
 
+#include "Flyweight.hpp"
+#include "FlyweightFactory.hpp"
+
 using namespace std;
 
 ///AbstractFactory 模式和 Factory 模式的区别是初学(使用)设计模式时候的一个容易引 起困惑的地方。实际上,AbstractFactory 模式是为创建一组(有多类)相关或依赖的对象提 供创建接口,而 Factory 模式正如我在相应的文档中分析的是为一类对象提供创建接口或延 迟对象的创建到子类中实现。并且可以看到,AbstractFactory 模式通常都是使用 Factory 模 式实现(ConcreteFactory1)。
@@ -117,7 +120,7 @@ void DecoratorTest() {
     delete dec;
 }
 
-
+///Composite 模式通过和 Decorator 模式有着类似的结构图,但是 Composite 模式旨在构造 类,而 Decorator 模式重在不生成子类即可给对象添加职责。Decorator 模式重在修饰,而 Composite 模式重在表示
 void CompositeTest() {
     Leaf* l = new Leaf();
     l->Operation();
@@ -128,9 +131,16 @@ void CompositeTest() {
     
     NS_Composite::Component* ll = com->GetChild(0);
     ll->Operation();
-
 }
 
+///Flyweight 模式中有一个类似 Factory 模式的对象构造工厂FlyweightFactory,当客户程序员(Client)需要一个对象时候就会向 FlyweightFactory 发出 请求对象的消息 GetFlyweight()消息,FlyweightFactory 拥有一个管理、存储对象的“仓 库”(或者叫对象池,vector 实现),GetFlyweight()消息会遍历对象池中的对象,如果已 经存在则直接返回给 Client,否则创建一个新的对象返回给 Client。
+void FlyweightTest() {
+FlyweightFactory* fc = new FlyweightFactory();
+    Flyweight* fw1 = fc->GetFlyweight("hello");
+    Flyweight* fw2 = fc->GetFlyweight("world!");
+    Flyweight* fw3 = fc->GetFlyweight("hello");
+    void(fw1||fw2||fw3);
+}
 
 //void Test() {
 //
@@ -152,7 +162,7 @@ int main(int argc, const char * argv[]) {
     CallAndLog(Adapter)
     CallAndLog(Decorator)
     CallAndLog(Composite)
-//    CallAndLog(FactoryTest)
+    CallAndLog(Flyweight)
 //    CallAndLog(FactoryTest)
     //    CallAndLog(FactoryTest)
     //    CallAndLog(FactoryTest)
