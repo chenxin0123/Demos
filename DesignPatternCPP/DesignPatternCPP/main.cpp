@@ -35,6 +35,8 @@
 #include "Flyweight.hpp"
 #include "FlyweightFactory.hpp"
 
+#include "Facade.hpp"
+
 using namespace std;
 
 ///AbstractFactory 模式和 Factory 模式的区别是初学(使用)设计模式时候的一个容易引 起困惑的地方。实际上,AbstractFactory 模式是为创建一组(有多类)相关或依赖的对象提 供创建接口,而 Factory 模式正如我在相应的文档中分析的是为一类对象提供创建接口或延 迟对象的创建到子类中实现。并且可以看到,AbstractFactory 模式通常都是使用 Factory 模 式实现(ConcreteFactory1)。
@@ -142,9 +144,62 @@ FlyweightFactory* fc = new FlyweightFactory();
     void(fw1||fw2||fw3);
 }
 
-//void Test() {
-//
-//}
+///为子系统中的一组接口提供一个一致的界面， Facade模式定义了一个高层接口，这个接口使得这一子系统更加容易使用
+///比如为点灯 冰箱 空调提供一个关闭电源的高层接口
+///Façade 模式在高层提供了一个统一的接口,解耦了系统。设计模式中还有另一种模式 Mediator 也和 Façade 有类似的地方。但是 Mediator 主要目的是对象间的访问的解耦
+void FacadeTest() {
+    Facade* f = new Facade();
+    f->OperationWrapper();
+}
+
+void ProxyTest() {
+
+}
+
+void TemplateTest() {
+
+}
+
+void StrategyTest() {
+
+}
+
+void StateTest() {
+
+}
+
+void ObserverTest() {
+
+}
+
+void MementoTest() {
+
+}
+
+void MediatorTest() {
+    
+}
+
+void CommandTest() {
+    
+}
+
+void VisitorTest() {
+    
+}
+
+void ChainOfResponsibilityTest() {
+    
+}
+
+
+void IteratorTest() {
+    
+}
+
+void InterpreterTest() {
+    
+}
 
 int main(int argc, const char * argv[]) {
     
@@ -163,11 +218,21 @@ int main(int argc, const char * argv[]) {
     CallAndLog(Decorator)
     CallAndLog(Composite)
     CallAndLog(Flyweight)
-//    CallAndLog(FactoryTest)
-    //    CallAndLog(FactoryTest)
-    //    CallAndLog(FactoryTest)
-    //    CallAndLog(FactoryTest)
-    //    CallAndLog(FactoryTest)
+    CallAndLog(Facade)
+    CallAndLog(Proxy)
+    
+    //行为模式
+    CallAndLog(Template)
+    CallAndLog(Strategy)
+    CallAndLog(State)
+    CallAndLog(Observer)
+    CallAndLog(Memento)
+    CallAndLog(Mediator)
+    CallAndLog(Command)
+    CallAndLog(Visitor)
+    CallAndLog(ChainOfResponsibility)
+    CallAndLog(Iterator)
+    CallAndLog(Interpreter)
 
     return 0;
 }
