@@ -28,6 +28,10 @@
 
 #include "Decorator.hpp"
 
+#include "Component.hpp"
+#include "Composite.hpp"
+#include "Leaf.hpp"
+
 using namespace std;
 
 ///AbstractFactory 模式和 Factory 模式的区别是初学(使用)设计模式时候的一个容易引 起困惑的地方。实际上,AbstractFactory 模式是为创建一组(有多类)相关或依赖的对象提 供创建接口,而 Factory 模式正如我在相应的文档中分析的是为一类对象提供创建接口或延 迟对象的创建到子类中实现。并且可以看到,AbstractFactory 模式通常都是使用 Factory 模 式实现(ConcreteFactory1)。
@@ -100,8 +104,13 @@ void AdapterTest() {
 ///Decorator 模式除了采用组合的方式取得了比采用继承方式更好的效果,Decorator 模式 还给设计带来一种“即用即付”的方式来添加职责
 ///Decorator 模式和 Proxy 模式的相似的地方在于它们都拥有一个指向其他对象的引用
 ///为了多态,通过父类指针指向其具体子类,但是这就带来另外一个问题,当具体子类要添加 新的职责,就必须向其父类添加一个这个职责的抽象接口,否则是通过父类指针是调用不到 这个方法了。这样处于高层的父类就承载了太多的特征(方法),并且继承自这个父类的所 有子类都不可避免继承了父类的这些接口,但是可能这并不是这个具体子类所需要的。而在 Decorator 模式提供了一种较好的解决方法,当需要添加一个操作的时候就可以通过 Decorator 模式来解决,你可以一步步添加新的职责。
+///透明性使得你可以递归的嵌套多个装饰，从而可以添加任意多的功能
+///以下情况使用Decorator模式
+///1.在不影响其他对象的情况下，以动态、透明的方式给单个对象添加职责。
+///2 处理那些可以撤消的职责。
+///3.当不能采用生成子类的方法进行扩充时。一种情况是，可能有大量独立的扩展
 void DecoratorTest() {
-    Component* com = new ConcreteComponent();
+    ::Component* com = new ConcreteComponent();
     Decorator* dec = new ConcreteDecorator(com);
     dec->Operation();
     delete com;
@@ -109,8 +118,16 @@ void DecoratorTest() {
 }
 
 
-void Test() {
+void CompositeTest() {
+    Leaf* l = new Leaf();
+    l->Operation();
     
+    Composite* com = new Composite();
+    com->Add(l);
+    com->Operation();
+    
+    NS_Composite::Component* ll = com->GetChild(0);
+    ll->Operation();
 
 }
 
@@ -134,10 +151,13 @@ int main(int argc, const char * argv[]) {
     CallAndLog(Bridge)
     CallAndLog(Adapter)
     CallAndLog(Decorator)
-    
+    CallAndLog(Composite)
 //    CallAndLog(FactoryTest)
 //    CallAndLog(FactoryTest)
-//    CallAndLog(FactoryTest)
+    //    CallAndLog(FactoryTest)
+    //    CallAndLog(FactoryTest)
+    //    CallAndLog(FactoryTest)
+    //    CallAndLog(FactoryTest)
 
     return 0;
 }

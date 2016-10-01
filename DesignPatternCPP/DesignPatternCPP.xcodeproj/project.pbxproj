@@ -20,6 +20,9 @@
 		E010E2EE1D9EB63F00ADA099 /* Adapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E010E2EC1D9EB63F00ADA099 /* Adapter.cpp */; };
 		E0140D6A1D8D272400992482 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0140D691D8D272400992482 /* main.cpp */; };
 		E0F5D3591D9FDC1800F567EE /* Decorator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D3571D9FDC1800F567EE /* Decorator.cpp */; };
+		E0F5D35C1D9FEAC000F567EE /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D35A1D9FEAC000F567EE /* Component.cpp */; };
+		E0F5D35F1D9FF82C00F567EE /* Composite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D35D1D9FF82C00F567EE /* Composite.cpp */; };
+		E0F5D3621D9FF86200F567EE /* Leaf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D3601D9FF86200F567EE /* Leaf.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,7 +48,6 @@
 		E010E2AB1D9C103500ADA099 /* Product.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Product.hpp; sourceTree = "<group>"; };
 		E010E2B71D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2B91D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		E010E2BB1D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2BF1D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2C11D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2C31D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -76,6 +78,12 @@
 		E0140D691D8D272400992482 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E0F5D3571D9FDC1800F567EE /* Decorator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Decorator.cpp; sourceTree = "<group>"; };
 		E0F5D3581D9FDC1800F567EE /* Decorator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Decorator.hpp; sourceTree = "<group>"; };
+		E0F5D35A1D9FEAC000F567EE /* Component.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Component.cpp; sourceTree = "<group>"; };
+		E0F5D35B1D9FEAC000F567EE /* Component.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Component.hpp; sourceTree = "<group>"; };
+		E0F5D35D1D9FF82C00F567EE /* Composite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Composite.cpp; sourceTree = "<group>"; };
+		E0F5D35E1D9FF82C00F567EE /* Composite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Composite.hpp; sourceTree = "<group>"; };
+		E0F5D3601D9FF86200F567EE /* Leaf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Leaf.cpp; sourceTree = "<group>"; };
+		E0F5D3611D9FF86200F567EE /* Leaf.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Leaf.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +169,12 @@
 		E010E2BA1D9C11C200ADA099 /* Composite */ = {
 			isa = PBXGroup;
 			children = (
-				E010E2BB1D9C11C200ADA099 /* .gitkeep */,
+				E0F5D35A1D9FEAC000F567EE /* Component.cpp */,
+				E0F5D35B1D9FEAC000F567EE /* Component.hpp */,
+				E0F5D35D1D9FF82C00F567EE /* Composite.cpp */,
+				E0F5D35E1D9FF82C00F567EE /* Composite.hpp */,
+				E0F5D3601D9FF86200F567EE /* Leaf.cpp */,
+				E0F5D3611D9FF86200F567EE /* Leaf.hpp */,
 			);
 			path = Composite;
 			sourceTree = "<group>";
@@ -393,6 +406,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E010E2DF1D9D53BE00ADA099 /* Builder.cpp in Sources */,
+				E0F5D3621D9FF86200F567EE /* Leaf.cpp in Sources */,
+				E0F5D35F1D9FF82C00F567EE /* Composite.cpp in Sources */,
 				E0F5D3591D9FDC1800F567EE /* Decorator.cpp in Sources */,
 				E010E2E51D9D5AF400ADA099 /* Prototype.cpp in Sources */,
 				E010E2EB1D9E96A600ADA099 /* AbstractionImp.cpp in Sources */,
@@ -401,6 +416,7 @@
 				E010E2E81D9E966400ADA099 /* Abstraction.cpp in Sources */,
 				E010E2AC1D9C103500ADA099 /* AbstractFactory.cpp in Sources */,
 				E010E2AD1D9C103500ADA099 /* AbstractProduct.cpp in Sources */,
+				E0F5D35C1D9FEAC000F567EE /* Component.cpp in Sources */,
 				E010E2DC1D9D514A00ADA099 /* Singleton.cpp in Sources */,
 				E010E2EE1D9EB63F00ADA099 /* Adapter.cpp in Sources */,
 				E010E2AF1D9C103500ADA099 /* Product.cpp in Sources */,
