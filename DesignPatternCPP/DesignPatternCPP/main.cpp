@@ -26,6 +26,8 @@
 
 #include "Adapter.hpp"
 
+#include "Decorator.hpp"
+
 using namespace std;
 
 ///AbstractFactory 模式和 Factory 模式的区别是初学(使用)设计模式时候的一个容易引 起困惑的地方。实际上,AbstractFactory 模式是为创建一组(有多类)相关或依赖的对象提 供创建接口,而 Factory 模式正如我在相应的文档中分析的是为一类对象提供创建接口或延 迟对象的创建到子类中实现。并且可以看到,AbstractFactory 模式通常都是使用 Factory 模 式实现(ConcreteFactory1)。
@@ -92,12 +94,35 @@ void AdapterTest() {
 #endif
 }
 
+///Decorator 提供了一种给类增加职责的方法,不是通过继承实现的,而是通过组合。
+///动态地给一个对象添加一些额外的职责或者行为。就增加功能来说， Decorator模式相比生成子类更为灵活。
+///它是通过创建一个包装对象，也就是装饰来包裹真实的对象
+///Decorator 模式除了采用组合的方式取得了比采用继承方式更好的效果,Decorator 模式 还给设计带来一种“即用即付”的方式来添加职责
+///Decorator 模式和 Proxy 模式的相似的地方在于它们都拥有一个指向其他对象的引用
+///为了多态,通过父类指针指向其具体子类,但是这就带来另外一个问题,当具体子类要添加 新的职责,就必须向其父类添加一个这个职责的抽象接口,否则是通过父类指针是调用不到 这个方法了。这样处于高层的父类就承载了太多的特征(方法),并且继承自这个父类的所 有子类都不可避免继承了父类的这些接口,但是可能这并不是这个具体子类所需要的。而在 Decorator 模式提供了一种较好的解决方法,当需要添加一个操作的时候就可以通过 Decorator 模式来解决,你可以一步步添加新的职责。
+void DecoratorTest() {
+    Component* com = new ConcreteComponent();
+    Decorator* dec = new ConcreteDecorator(com);
+    dec->Operation();
+    delete com;
+    delete dec;
+}
+
+
+void Test() {
+    
+
+}
+
+
 //void Test() {
-//    
+//
 //}
 
 int main(int argc, const char * argv[]) {
+    
 #define CallAndLog(fn) cout<<#fn<<":"<<endl;fn##Test();cout<<endl;
+    
     //创建型设计模式
     CallAndLog(Factory)
     CallAndLog(AbstractFactory)
@@ -108,6 +133,8 @@ int main(int argc, const char * argv[]) {
     //结构型
     CallAndLog(Bridge)
     CallAndLog(Adapter)
+    CallAndLog(Decorator)
+    
 //    CallAndLog(FactoryTest)
 //    CallAndLog(FactoryTest)
 //    CallAndLog(FactoryTest)
