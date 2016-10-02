@@ -37,6 +37,8 @@
 
 #include "Facade.hpp"
 
+#include "Proxy.hpp"
+
 using namespace std;
 
 ///AbstractFactory 模式和 Factory 模式的区别是初学(使用)设计模式时候的一个容易引 起困惑的地方。实际上,AbstractFactory 模式是为创建一组(有多类)相关或依赖的对象提 供创建接口,而 Factory 模式正如我在相应的文档中分析的是为一类对象提供创建接口或延 迟对象的创建到子类中实现。并且可以看到,AbstractFactory 模式通常都是使用 Factory 模 式实现(ConcreteFactory1)。
@@ -152,8 +154,15 @@ void FacadeTest() {
     f->OperationWrapper();
 }
 
+///装饰者（Decorator）：动态地给一个对象添加一些额外的职责，代理模式（Proxy）：为另一个对象提供一个替身或占位符以控制对这个对象的访问，简而言之就是用一个对象来代表另一个对象。。
+///适配器Adapter 为它所适配的对象提供了一个不同的接口。相反，代理提供了与它的实体相同的接口，用于访问保护的代理可能会拒绝执行实体会执行的操作，因此，它的接口实际上可能只是实体接口的一个子集。
+///1、“增加一层间接层”是软件系统中对许多负责问题的一种常见解决方法。在面向对象系统中，直接使用某些对象会带来很多问题，作为间接层的proxy对象便是解决这一问题的常用手段。
+///2、具体proxy设计模式的实现方法、实现粒度都相差很大，有些可能对单个对象作细粒度的控制，有些可能对组件模块提供抽象代理层，在架构层次对对象作proxy。
+///3、proxy并不一定要求保持接口的一致性，只要能够实现间接控制，有时候损及一些透明性是可以接受的。
 void ProxyTest() {
-
+    Subject* sub = new ConcreteSubject();
+    Proxy* p = new Proxy(sub);
+    p->Request();
 }
 
 void TemplateTest() {

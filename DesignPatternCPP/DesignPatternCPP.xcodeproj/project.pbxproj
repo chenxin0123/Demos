@@ -26,6 +26,7 @@
 		E0F5D3651D9FFEE100F567EE /* Flyweight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D3631D9FFEE100F567EE /* Flyweight.cpp */; };
 		E0F5D3681D9FFF2500F567EE /* FlyweightFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D3661D9FFF2500F567EE /* FlyweightFactory.cpp */; };
 		E0F5D36B1DA002C700F567EE /* Facade.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D3691DA002C700F567EE /* Facade.cpp */; };
+		E0F5D36E1DA0D46500F567EE /* Proxy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E0F5D36C1DA0D46500F567EE /* Proxy.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,7 +57,6 @@
 		E010E2C71D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2C91D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2CB1D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		E010E2CF1D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2D31D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2D51D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		E010E2D71D9C11C200ADA099 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -91,6 +91,8 @@
 		E0F5D3671D9FFF2500F567EE /* FlyweightFactory.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FlyweightFactory.hpp; sourceTree = "<group>"; };
 		E0F5D3691DA002C700F567EE /* Facade.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Facade.cpp; sourceTree = "<group>"; };
 		E0F5D36A1DA002C700F567EE /* Facade.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Facade.hpp; sourceTree = "<group>"; };
+		E0F5D36C1DA0D46500F567EE /* Proxy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Proxy.cpp; sourceTree = "<group>"; };
+		E0F5D36D1DA0D46500F567EE /* Proxy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Proxy.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,7 +269,8 @@
 		E010E2CE1D9C11C200ADA099 /* Proxy */ = {
 			isa = PBXGroup;
 			children = (
-				E010E2CF1D9C11C200ADA099 /* .gitkeep */,
+				E0F5D36C1DA0D46500F567EE /* Proxy.cpp */,
+				E0F5D36D1DA0D46500F567EE /* Proxy.hpp */,
 			);
 			path = Proxy;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				E010E2E81D9E966400ADA099 /* Abstraction.cpp in Sources */,
 				E0F5D36B1DA002C700F567EE /* Facade.cpp in Sources */,
 				E010E2AC1D9C103500ADA099 /* AbstractFactory.cpp in Sources */,
+				E0F5D36E1DA0D46500F567EE /* Proxy.cpp in Sources */,
 				E010E2AD1D9C103500ADA099 /* AbstractProduct.cpp in Sources */,
 				E0F5D3681D9FFF2500F567EE /* FlyweightFactory.cpp in Sources */,
 				E0F5D35C1D9FEAC000F567EE /* Component.cpp in Sources */,
