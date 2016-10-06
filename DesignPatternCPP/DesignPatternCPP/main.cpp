@@ -39,6 +39,36 @@
 
 #include "Proxy.hpp"
 
+#include "Template.hpp"
+
+#include "Context.hpp"
+#include "Strategy.hpp"
+
+#include "Context_State.hpp"
+#include "state.hpp"
+
+#include "Observer.hpp"
+
+#include "Memento.hPP"
+
+#include "Mediator.hpp"
+#include "Colleage.hpp"
+
+#include "Command.hpp"
+#include "Invoker.hpp"
+#include "Reciever.hpp"
+
+#include "Element.hpp"
+#include "Visitor.hpp"
+
+#include "Handle.hpp"
+
+#include "Iterator.hpp"
+#include "Aggregate.hpp"
+
+#include "Interpreter_Context.hpp"
+#include "Interpret.hpp"
+
 using namespace std;
 
 ///AbstractFactory 模式和 Factory 模式的区别是初学(使用)设计模式时候的一个容易引 起困惑的地方。实际上,AbstractFactory 模式是为创建一组(有多类)相关或依赖的对象提 供创建接口,而 Factory 模式正如我在相应的文档中分析的是为一类对象提供创建接口或延 迟对象的创建到子类中实现。并且可以看到,AbstractFactory 模式通常都是使用 Factory 模 式实现(ConcreteFactory1)。
@@ -154,6 +184,7 @@ void FacadeTest() {
     f->OperationWrapper();
 }
 
+///代理模式使用代理对象完成用户请求，屏蔽用户对真实对象的访问.现实世界的代理人被授权执行当事人的一些事宜，无需当事人出面，从第三方的角度看，似乎当事人并不存在，因为他只和代理人通信。而事实上代理人是要有当事人的授权，并且在核心问题上还需要请示当事人。
 ///装饰者（Decorator）：动态地给一个对象添加一些额外的职责，代理模式（Proxy）：为另一个对象提供一个替身或占位符以控制对这个对象的访问，简而言之就是用一个对象来代表另一个对象。。
 ///适配器Adapter 为它所适配的对象提供了一个不同的接口。相反，代理提供了与它的实体相同的接口，用于访问保护的代理可能会拒绝执行实体会执行的操作，因此，它的接口实际上可能只是实体接口的一个子集。
 ///1、“增加一层间接层”是软件系统中对许多负责问题的一种常见解决方法。在面向对象系统中，直接使用某些对象会带来很多问题，作为间接层的proxy对象便是解决这一问题的常用手段。
@@ -165,49 +196,128 @@ void ProxyTest() {
     p->Request();
 }
 
+///又叫模板方法模式，在一个方法中定义一个算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以在不改变算法结构的情冴下，重新定义算法中的某些步骤。
 void TemplateTest() {
-
+    AbstractClass* p1 = new ConcreteClass1();
+    AbstractClass* p2 = new ConcreteClass2();
+    p1->TemplateMethod();
+    p2->TemplateMethod();
 }
 
+///Strategy 模式则通过组合(委托) 来达到和 Template 模式类似的效果，其代价就是空间和时间上的代价
+///Strategy 模式和 Template 模式要解决的问题是相同(类似)的，都是为了给业务逻辑(算 法)具体实现和抽象接口之间的解耦。Strategy 模式将逻辑(算法)封装到一个类(Context) 里面，通过组合的方式将具体算法的实现在组合对象中实现，再通过委托的方式将抽象接口 的实现委托给组合对象实现。State 模式也有类似的功能
+//////Bridge模式和Strategy模式相似就是因为他们都将任务委托给了另外一个接口的具体实现，他们之间的区别在于Bridge的目的是让底层实现和上层接口可以分别演化，从而提高移植性而Strategy的目的是将复杂的算法封装起来，从而便于替换不同的算法。
+///以相对策略模式，桥接模式要表达的内容要更多，结构也更加复杂。桥接模式表达的主要意义其实是接口隔离的原则，即把本质上并不内聚的两种体系区别 开来，使得它们可以松散的组合，而策略在解耦上还仅仅是某一个算法的层次，没有到体系这一层次。从结构图中可以看到，策略的结构是包容在桥接结构中的，桥接中必然存在着策略模式
 void StrategyTest() {
-
+    Strategy* ps = new ConcreteStrategyA();
+    Context* pc = new Context(ps);
+    pc->DoAction();
 }
 
+/// Strategy 模式很 State 模式也有相似之处，但是 State 模式注重的对象在不同的 状态下不同的操作。两者之间的区别就是State模式中具体实现类中有一个指向Context 的引用，而 Strategy 模式则没有。
+///通常我们在实现这类系统会使用到很多的Switch/Case语句，Case某种状态，发生什么动作， Case 另外一种状态，则发生另外一种状态。但是这种实现方式至少有以下两个问题:
+///1)当状态数目不是很多的时候，Switch/Case 可能可以搞定。但是当状态数目很多的时 候(实际系统中也正是如此)，维护一大组的 Switch/Case 语句将是一件异常困难并且容易出 错的事情。
+///2)状态逻辑和动作实现没有分离。在很多的系统实现中，动作的实现代码直接写在状 态的逻辑当中。这带来的后果就是系统的扩展性和维护得不到保证。
+///State 模式很好地实现了对象的状态逻辑和动作实现的分离，状态逻辑分布在 State 的派 生类中实现，而动作实现则可以放在 Context 类中实现(这也是为什么 State 派生类需要拥 有一个指向 Context 的指针)。这使得两者的变化相互独立，改变 State 的状态逻辑可以很容 易复用 Context 的动作，也可以在不影响 State 派生类的前提下创建 Context 的子类来更改或 替换动作实现。
 void StateTest() {
-
+    State* st = new ConcreteStateA();
+    Context_State* con = new Context_State(st);
+    con->OperationChangState();
+    con->OperationChangState();
+    con->OperationChangState();
 }
 
+///Observer 模式应该可以说是应用最多、影响最广的模式之一，因为 Observer 的一个实 例 Model/View/Control(MVC)结构在系统开发架构设计中有着很重要的地位和意义
 void ObserverTest() {
-
+    NS_Observer::ConcreteSubject* sub = new NS_Observer::ConcreteSubject();
+    NS_Observer::Observer* o1 = new NS_Observer::ConcreteObserverA(sub);
+    NS_Observer::Observer* o2 = new NS_Observer::ConcreteObserverB(sub);
+    sub->SetState("old");
+    sub->Notify();
+    sub->SetState("new"); //也可以由 Observer 调用 sub->Notify();
+    delete o1;
+    delete o2;
 }
 
+///Memento 模式的关键就是要在不破坏封装行的前提下，捕获并保存一个类的内部 状态，这样就可以利用该保存的状态实施恢复操作。为了达到这个目标，可以在后面的实现 中看到我们采取了一定语言支持的技术。
+///在 Command 模式中，Memento 模式经常被用来维护可以撤销(Undo)操作的状态
 void MementoTest() {
-
+    Originator* o = new Originator();
+    o->SetState("old"); //备忘前状态
+    o->PrintState();
+    Memento* m = o->CreateMemento();//将状态备忘
+    o->SetState("new"); //修改状态
+    o->PrintState();
+    o->RestoreToMemento(m); //恢复修改前状态
+    o->PrintState();
 }
 
+///当系统规模变大，对象的量变引 起系统复杂度的急剧增加，对象间的通信也变得越来越复杂，这时候我们就要提供一个专门 处理对象间交互和通信的类，这个中介者就是 Mediator 模式
+///Mediator 模式提供将对象间 的交互和通讯封装在一个类中，各个对象间的通信不必显势去声明和引用，大大降低了系统 的复杂性能
+///Mediator 模式是一种很有用并且很常用的模式，它通过将对象间的通信封装到一个类 中，将多对多的通信转化为一对多的通信，降低了系统的复杂性。Mediator 还获得系统解耦 的特性，通过 Mediator，各个 Colleague 就不必维护各自通信的对象和通信协议，降低了系 统的耦合性，Mediator 和各个 Colleague 就可以相互独立地修改了。
+///Mediator 模式还有一个很显著额特点就是将控制集中，集中的优点就是便于管理，也正 式符合了 OO 设计中的每个类的职责要单一和集中的原则。
 void MediatorTest() {
-    
+    ConcreteMediator* m = new ConcreteMediator();
+    ConcreteColleageA* c1 = new ConcreteColleageA(m);
+    ConcreteColleageB* c2 = new ConcreteColleageB(m);
+    m->IntroColleage(c1,c2);
+    c1->SetState("old");
+    c2->SetState("old");
+    c1->Aciton();
+    c2->Aciton();
+    cout<<endl;
+    c1->SetState("new");
+    c1->Aciton();
+    c2->Aciton();
+    cout<<endl;
+    c2->SetState("old");
+    c2->Aciton();
+    c1->Aciton();
 }
 
+///Command 模式在实现的实现和思想都很简单，其关键就是将一个请求封装到一个类中 (Command)，再提供处理对象(Receiver)，最后 Command 命令由 Invoker 激活。另外，我 们可以将请求接收者的处理抽象出来作为参数传给 Command 对象，实际也就是回调的机制 (Callback)来实现这一点，也就是说将处理操作方法地址(在对象内部)通过参数传递给 Command 对象，Command 对象在适当的时候(Invoke 激活的时候)再调用该函数
+///Command 模式的思想非常简单，但是 Command 模式也十分常见，并且威力不小。实 际上，Command 模式关键就是提供一个抽象的 Command 类，并将执行操作封装到 Command 类接口中，Command 类中一般就是只是一些接口的集合，并不包含任何的数据属性
 void CommandTest() {
-    
+    Reciever* rev = new Reciever();
+    Command* cmd = new ConcreteCommand(rev);
+    Invoker* inv = new Invoker(cmd);
+    inv->Invoke();
 }
 
+///Visitor 模式则提供了一种解决方案:将更新(变更)封装到一个类中(访问操作)，并 由待更改类提供一个接收接口，则可达到效果。
+///Visitor 模式在不破坏类的前提下，为类提供增加新的新操作。Visitor 模式的关键是双分派(Double-Dispatch)的技术。C++语言支持的是单分派。
 void VisitorTest() {
-    
+    Visitor* vis = new ConcreteVisitorA();
+    Element* elm = new ConcreteElementA();
+    elm->Accept(vis);
 }
 
+///MFC 提供了消息的处理的链式处理策略，处理消息的请求将沿着预先定义好的路径依次进行处理。消息的发送者并不知道该消息最后是由那个具体对象处理的，当然它也无须也 不想知道
+///Chain of Responsibility 模式描述其实就是这样一类问题将可能处理一个请求的对象链 接成一个链，并将请求在这个链上传递，直到有对象处理该请求(可能需要提供一个默认处 理所有请求的类，例如 MFC 中的 CwinApp 类)。
 void ChainOfResponsibilityTest() {
-    
+    Handle* h1 = new ConcreteHandleA();
+    Handle* h2 = new ConcreteHandleB();
+    h1->SetSuccessor(h2);
+    h1->HandleRequest();
 }
 
-
+///Iterator 模式应该是最为熟悉的模式了，最简单的证明就是我在实现 Composite 模式、 Flyweight 模式、Observer 模式中就直接用到了 STL 提供的 Iterator 来遍历 Vector 或者 List 数据结构。
+///Iterator 模式也正是用来解决对一个聚合对象的遍历问题，将对聚合的遍历封装到一个 类中进行，这样就避免了暴露这个聚合对象的内部表示的可能。
 void IteratorTest() {
-    
+    Aggregate* ag = new ConcreteAggregate();
+    Iterator* it = new ConcreteIterator(ag);
+    for (; !(it->IsDone()) ; it->Next()) {
+        cout<<it->CurrentItem()<<endl;
+    }
 }
 
+///一些应用提供了内建(Build-In)的脚本或者宏语言来让用户可以定义他们能够在系统 中进行的操作。Interpreter 模式的目的就是使用一个解释器为用户提供一个一门定义语言的 语法表示的解释器，然后通过这个解释器来解释语言中的句子
+///Interpreter 模式中使用类来表示文法规则，因此可以很容易实现文法的扩展。另外对于 终结符我们可以使用 Flyweight 模式来实现终结符的共享。
 void InterpreterTest() {
-    
+    Interpreter_Context* c = new Interpreter_Context();
+    AbstractExpression* te = new TerminalExpression("hello");
+    AbstractExpression* nte = new NonterminalExpression(te,2);
+    nte->Interpret(*c);
 }
 
 int main(int argc, const char * argv[]) {
