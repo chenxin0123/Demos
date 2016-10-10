@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:D5/D5.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:DesignPatternCPP/DesignPatternCPP.xcodeproj">
    </FileRef>
    <FileRef
