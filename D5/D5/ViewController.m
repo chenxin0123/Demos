@@ -24,8 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.titles = @[@"Let's Build UITableView"];
-    self.classes = @[NSClassFromString(@"CXBuildTableViewViewController")];
+    self.titles = @[@"WIFI",
+                    @"AppStore"];
+    self.classes = @[NSClassFromString(@"CXWIFIViewController"),
+                     NSClassFromString(@"CXAppStoreViewController")];
     
     [self configTableView];
 }

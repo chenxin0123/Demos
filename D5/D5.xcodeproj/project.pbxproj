@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		903B36E91DB73FFB00BFC633 /* CXWIFIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 903B36E81DB73FFB00BFC633 /* CXWIFIViewController.m */; };
+		903B36EC1DB7413B00BFC633 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 903B36EB1DB7413B00BFC633 /* SystemConfiguration.framework */; };
+		903B36F01DB7481A00BFC633 /* getgateway.c in Sources */ = {isa = PBXBuildFile; fileRef = 903B36ED1DB7481A00BFC633 /* getgateway.c */; };
+		909ABC881DC06BFD001E826B /* CXAppStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 909ABC871DC06BFD001E826B /* CXAppStoreViewController.m */; };
 		E0D838281DABC109008F05E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D838271DABC109008F05E7 /* main.m */; };
 		E0D8382B1DABC109008F05E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D8382A1DABC109008F05E7 /* AppDelegate.m */; };
 		E0D8382E1DABC109008F05E7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D8382D1DABC109008F05E7 /* ViewController.m */; };
 		E0D838311DABC109008F05E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0D8382F1DABC109008F05E7 /* Main.storyboard */; };
 		E0D838331DABC109008F05E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0D838321DABC109008F05E7 /* Assets.xcassets */; };
 		E0D838361DABC109008F05E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0D838341DABC109008F05E7 /* LaunchScreen.storyboard */; };
-		E0D838401DABC231008F05E7 /* CXBuildTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D8383F1DABC231008F05E7 /* CXBuildTableViewViewController.m */; };
-		E0D838431DABDCAC008F05E7 /* CXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D838421DABDCAC008F05E7 /* CXTableView.m */; };
-		E0D838461DABDCD1008F05E7 /* CXTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D838451DABDCD1008F05E7 /* CXTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		903B36E71DB73FFB00BFC633 /* CXWIFIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXWIFIViewController.h; sourceTree = "<group>"; };
+		903B36E81DB73FFB00BFC633 /* CXWIFIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXWIFIViewController.m; sourceTree = "<group>"; };
+		903B36EB1DB7413B00BFC633 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		903B36ED1DB7481A00BFC633 /* getgateway.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = getgateway.c; sourceTree = "<group>"; };
+		903B36EE1DB7481A00BFC633 /* getgateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getgateway.h; sourceTree = "<group>"; };
+		903B36EF1DB7481A00BFC633 /* route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = route.h; sourceTree = "<group>"; };
+		903B36F11DB7547900BFC633 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		909ABC861DC06BFD001E826B /* CXAppStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXAppStoreViewController.h; sourceTree = "<group>"; };
+		909ABC871DC06BFD001E826B /* CXAppStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXAppStoreViewController.m; sourceTree = "<group>"; };
 		E0D838231DABC109008F05E7 /* D5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D838271DABC109008F05E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0D838291DABC109008F05E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -29,12 +39,6 @@
 		E0D838321DABC109008F05E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0D838351DABC109008F05E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0D838371DABC109008F05E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0D8383E1DABC231008F05E7 /* CXBuildTableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXBuildTableViewViewController.h; sourceTree = "<group>"; };
-		E0D8383F1DABC231008F05E7 /* CXBuildTableViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXBuildTableViewViewController.m; sourceTree = "<group>"; };
-		E0D838411DABDCAC008F05E7 /* CXTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXTableView.h; sourceTree = "<group>"; };
-		E0D838421DABDCAC008F05E7 /* CXTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXTableView.m; sourceTree = "<group>"; };
-		E0D838441DABDCD1008F05E7 /* CXTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXTableViewCell.h; sourceTree = "<group>"; };
-		E0D838451DABDCD1008F05E7 /* CXTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,17 +46,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				903B36EC1DB7413B00BFC633 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		903B36E61DB73FE500BFC633 /* WIFI */ = {
+			isa = PBXGroup;
+			children = (
+				903B36ED1DB7481A00BFC633 /* getgateway.c */,
+				903B36EE1DB7481A00BFC633 /* getgateway.h */,
+				903B36EF1DB7481A00BFC633 /* route.h */,
+				903B36E71DB73FFB00BFC633 /* CXWIFIViewController.h */,
+				903B36E81DB73FFB00BFC633 /* CXWIFIViewController.m */,
+				903B36F11DB7547900BFC633 /* Header.h */,
+			);
+			path = WIFI;
+			sourceTree = "<group>";
+		};
+		903B36EA1DB7413B00BFC633 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				903B36EB1DB7413B00BFC633 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		909ABC851DC06BD7001E826B /* AppStore */ = {
+			isa = PBXGroup;
+			children = (
+				909ABC861DC06BFD001E826B /* CXAppStoreViewController.h */,
+				909ABC871DC06BFD001E826B /* CXAppStoreViewController.m */,
+			);
+			path = AppStore;
+			sourceTree = "<group>";
+		};
 		E0D8381A1DABC109008F05E7 = {
 			isa = PBXGroup;
 			children = (
 				E0D838251DABC109008F05E7 /* D5 */,
 				E0D838241DABC109008F05E7 /* Products */,
+				903B36EA1DB7413B00BFC633 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,7 +103,8 @@
 		E0D838251DABC109008F05E7 /* D5 */ = {
 			isa = PBXGroup;
 			children = (
-				E0D8383D1DABC216008F05E7 /* Let's Build UITableView */,
+				909ABC851DC06BD7001E826B /* AppStore */,
+				903B36E61DB73FE500BFC633 /* WIFI */,
 				E0D838291DABC109008F05E7 /* AppDelegate.h */,
 				E0D8382A1DABC109008F05E7 /* AppDelegate.m */,
 				E0D8382C1DABC109008F05E7 /* ViewController.h */,
@@ -87,19 +124,6 @@
 				E0D838271DABC109008F05E7 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E0D8383D1DABC216008F05E7 /* Let's Build UITableView */ = {
-			isa = PBXGroup;
-			children = (
-				E0D8383E1DABC231008F05E7 /* CXBuildTableViewViewController.h */,
-				E0D8383F1DABC231008F05E7 /* CXBuildTableViewViewController.m */,
-				E0D838411DABDCAC008F05E7 /* CXTableView.h */,
-				E0D838421DABDCAC008F05E7 /* CXTableView.m */,
-				E0D838441DABDCD1008F05E7 /* CXTableViewCell.h */,
-				E0D838451DABDCD1008F05E7 /* CXTableViewCell.m */,
-			);
-			path = "Let's Build UITableView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +157,7 @@
 				TargetAttributes = {
 					E0D838221DABC109008F05E7 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 44HU6MVQN2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -173,11 +198,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0D838461DABDCD1008F05E7 /* CXTableViewCell.m in Sources */,
-				E0D838401DABC231008F05E7 /* CXBuildTableViewViewController.m in Sources */,
-				E0D838431DABDCAC008F05E7 /* CXTableView.m in Sources */,
 				E0D8382E1DABC109008F05E7 /* ViewController.m in Sources */,
 				E0D8382B1DABC109008F05E7 /* AppDelegate.m in Sources */,
+				903B36F01DB7481A00BFC633 /* getgateway.c in Sources */,
+				909ABC881DC06BFD001E826B /* CXAppStoreViewController.m in Sources */,
+				903B36E91DB73FFB00BFC633 /* CXWIFIViewController.m in Sources */,
 				E0D838281DABC109008F05E7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,7 +323,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 44HU6MVQN2;
 				INFOPLIST_FILE = D5/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cx.D5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -309,7 +336,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 44HU6MVQN2;
 				INFOPLIST_FILE = D5/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cx.D5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -335,6 +364,7 @@
 				E0D8383C1DABC109008F05E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
