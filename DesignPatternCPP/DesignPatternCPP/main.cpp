@@ -98,13 +98,13 @@ void SingletonTest() {
 }
 
 ///当我们要创建的对象很复杂的时候(通常是 由很多其他的对象组合而成),我们要要复杂对象的创建过程和这个对象的表示(展示)分 离开来,这样做的好处就是通过一步步的进行复杂对象的构建,由于在每一步的构造过程中 可以引入参数,使得经过相同的步骤创建最后得到的对象的展示不一样
-///Builder 模式和 AbstractFactory 模式在功能上很相似,因为都是用来创建大的复杂的对 象,它们的区别是:Builder 模式强调的是一步步创建对象,并通过相同的创建过程可以获 得不同的结果对象,一般来说 Builder 模式中对象不是直接返回的。而在 AbstractFactory 模 式中对象是直接返回的,AbstractFactory 模式强调的是为创建多个相互依赖的对象提供一个 同一的接口。
+///Builder 建造者模式和 AbstractFactory 模式在功能上很相似,因为都是用来创建大的复杂的对 象,它们的区别是:Builder 模式强调的是一步步创建对象,并通过相同的创建过程可以获 得不同的结果对象,一般来说 Builder 模式中对象不是直接返回的。而在 AbstractFactory 模 式中对象是直接返回的,AbstractFactory 模式强调的是为创建多个相互依赖的对象提供一个 同一的接口。
 void BuilderTest() {
     Director* d = new Director(new ConcreteBuilder());
     d->Construct();
 }
 
-///Prototype 模式提供了一个通过已存在对象进行新对象创建的接口
+///Prototype 原型模式提供了一个通过已存在对象进行新对象创建的接口
 ///实际上 Prototype 模式和 Builder 模式、 AbstractFactory 模式都是通过一个类(对象实例)来专门负责对象的创建工作(工厂对象), 它们之间的区别是:
 ///Builder 模式重在复杂对象的一步步创建 AbstractFactory 模式重在产生多个相互依赖类的对象,而 Prototype 模式重在从自身复制自己
 void PrototypeTest() {
@@ -135,7 +135,7 @@ void AdapterTest() {
 #endif
 }
 
-///Decorator 提供了一种给类增加职责的方法,不是通过继承实现的,而是通过组合。
+///Decorator 装饰者模式提供了一种给类增加职责的方法,不是通过继承实现的,而是通过组合。
 ///动态地给一个对象添加一些额外的职责或者行为。就增加功能来说， Decorator模式相比生成子类更为灵活。
 ///它是通过创建一个包装对象，也就是装饰来包裹真实的对象
 ///Decorator 模式除了采用组合的方式取得了比采用继承方式更好的效果,Decorator 模式 还给设计带来一种“即用即付”的方式来添加职责
@@ -154,7 +154,7 @@ void DecoratorTest() {
     delete dec;
 }
 
-///Composite 模式通过和 Decorator 模式有着类似的结构图,但是 Composite 模式旨在构造 类,而 Decorator 模式重在不生成子类即可给对象添加职责。Decorator 模式重在修饰,而 Composite 模式重在表示
+///Composite 组合模式通过和 Decorator 模式有着类似的结构图,但是 Composite 模式旨在构造 类,而 Decorator 模式重在不生成子类即可给对象添加职责。Decorator 模式重在修饰,而 Composite 模式重在表示
 void CompositeTest() {
     Leaf* l = new Leaf();
     l->Operation();
@@ -167,7 +167,7 @@ void CompositeTest() {
     ll->Operation();
 }
 
-///Flyweight 模式中有一个类似 Factory 模式的对象构造工厂FlyweightFactory,当客户程序员(Client)需要一个对象时候就会向 FlyweightFactory 发出 请求对象的消息 GetFlyweight()消息,FlyweightFactory 拥有一个管理、存储对象的“仓 库”(或者叫对象池,vector 实现),GetFlyweight()消息会遍历对象池中的对象,如果已 经存在则直接返回给 Client,否则创建一个新的对象返回给 Client。
+///Flyweight 享元模式中有一个类似 Factory 模式的对象构造工厂FlyweightFactory,当客户程序员(Client)需要一个对象时候就会向 FlyweightFactory 发出 请求对象的消息 GetFlyweight()消息,FlyweightFactory 拥有一个管理、存储对象的“仓 库”(或者叫对象池,vector 实现),GetFlyweight()消息会遍历对象池中的对象,如果已 经存在则直接返回给 Client,否则创建一个新的对象返回给 Client。
 void FlyweightTest() {
 FlyweightFactory* fc = new FlyweightFactory();
     Flyweight* fw1 = fc->GetFlyweight("hello");
@@ -204,7 +204,7 @@ void TemplateTest() {
     p2->TemplateMethod();
 }
 
-///Strategy 模式则通过组合(委托) 来达到和 Template 模式类似的效果，其代价就是空间和时间上的代价
+///Strategy 策略模式则通过组合(委托) 来达到和 Template 模式类似的效果，其代价就是空间和时间上的代价
 ///Strategy 模式和 Template 模式要解决的问题是相同(类似)的，都是为了给业务逻辑(算 法)具体实现和抽象接口之间的解耦。Strategy 模式将逻辑(算法)封装到一个类(Context) 里面，通过组合的方式将具体算法的实现在组合对象中实现，再通过委托的方式将抽象接口 的实现委托给组合对象实现。State 模式也有类似的功能
 //////Bridge模式和Strategy模式相似就是因为他们都将任务委托给了另外一个接口的具体实现，他们之间的区别在于Bridge的目的是让底层实现和上层接口可以分别演化，从而提高移植性而Strategy的目的是将复杂的算法封装起来，从而便于替换不同的算法。
 ///以相对策略模式，桥接模式要表达的内容要更多，结构也更加复杂。桥接模式表达的主要意义其实是接口隔离的原则，即把本质上并不内聚的两种体系区别 开来，使得它们可以松散的组合，而策略在解耦上还仅仅是某一个算法的层次，没有到体系这一层次。从结构图中可以看到，策略的结构是包容在桥接结构中的，桥接中必然存在着策略模式
@@ -292,7 +292,7 @@ void VisitorTest() {
     elm->Accept(vis);
 }
 
-///MFC 提供了消息的处理的链式处理策略，处理消息的请求将沿着预先定义好的路径依次进行处理。消息的发送者并不知道该消息最后是由那个具体对象处理的，当然它也无须也 不想知道
+///MFC 责任链模式提供了消息的处理的链式处理策略，处理消息的请求将沿着预先定义好的路径依次进行处理。消息的发送者并不知道该消息最后是由那个具体对象处理的，当然它也无须也 不想知道
 ///Chain of Responsibility 模式描述其实就是这样一类问题将可能处理一个请求的对象链 接成一个链，并将请求在这个链上传递，直到有对象处理该请求(可能需要提供一个默认处 理所有请求的类，例如 MFC 中的 CwinApp 类)。
 void ChainOfResponsibilityTest() {
     Handle* h1 = new ConcreteHandleA();

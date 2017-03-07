@@ -16,6 +16,7 @@
  2.当navigationBar.translucent为YES时 控制器的view默认从屏幕的(0,0)开始 当navigationBar.translucent为NO时 从屏幕(0,64)开始
  3.在touchesBegan中执行self.navigationController.navigationBar.translucent = YES; 子视图位置立即往上移动64距离
  4.extendedLayoutIncludesOpaqueBars默认NO 表示View的布局范围是否包含不透明的bars 仅bar不透明时有效 就导航栏而言 设为YES时View的布局范围包含导航栏 i.eView从(0,0)开始 最后 当控制器的View是个UIScrollView时 该属性无效
+ 5.automaticallyAdjustsScrollViewInsets在statusBar不隐藏的时候也有效 此时便宜20
  */
 
 /**
